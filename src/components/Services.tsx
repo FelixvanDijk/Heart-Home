@@ -285,7 +285,7 @@ function ServiceCard({
       className={`service-card group cursor-default ${featured ? 'md:col-span-2 md:row-span-2' : ''}`}
     >
       <div 
-        className={`relative h-full bg-white group-hover:bg-white/40 rounded-2xl overflow-hidden transition-all duration-500 ${
+        className={`relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-500 ${
           featured 
             ? 'p-8 md:p-10' 
             : 'p-6'
@@ -295,31 +295,31 @@ function ServiceCard({
           transform: 'translateZ(50px)',
         }}
       >
-        {/* Background scene that fades in on hover - z-index 1 */}
-        <div className="absolute inset-0 z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden rounded-2xl">
-          <HomeScene />
-        </div>
-
-        {/* Animated gradient border on hover - z-index 2 */}
-        <div className="absolute inset-0 z-[2] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        {/* Animated gradient border on hover - bottom layer */}
+        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary via-accent to-secondary p-[2px]">
-            <div className="w-full h-full bg-white/80 rounded-2xl" />
+            <div className="w-full h-full rounded-2xl" />
           </div>
         </div>
 
-        {/* Animated paw prints - z-index 5 */}
-        <div className="z-[5] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        {/* Background scene that fades in on hover - MAIN VISIBLE LAYER */}
+        <div className="absolute inset-0 z-[5] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden rounded-2xl">
+          <HomeScene />
+        </div>
+
+        {/* Animated paw prints - above scene */}
+        <div className="absolute inset-0 z-[15] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
           <PawPrints />
         </div>
 
-        {/* Animated animal that appears on hover - z-index 6 */}
-        <div className="z-[6] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+        {/* Animated animal that appears on hover - above scene */}
+        <div className="absolute inset-0 z-[15] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           <HoverAnimals type={animalType} />
           <FloatingHearts />
         </div>
 
-        {/* Content - z-index 10 to be above background but allow animals to show */}
-        <div className="relative z-[10] h-full flex flex-col" style={{ transform: 'translateZ(60px)' }}>
+        {/* Content - topmost layer */}
+        <div className="relative z-[20] h-full flex flex-col" style={{ transform: 'translateZ(60px)' }}>
           {/* Number badge */}
           <div className="absolute -top-2 -right-2 w-10 h-10 bg-gray-100 group-hover:bg-primary group-hover:text-white rounded-full flex items-center justify-center text-sm font-bold text-gray-400 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
             {(index + 1).toString().padStart(2, '0')}
