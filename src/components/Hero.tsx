@@ -149,15 +149,15 @@ export default function Hero() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                 style={{ perspective: '1000px' }}
               >
-                <span className="word inline-block text-text">Professional </span>
+                <span className="word inline-block text-text">Professional&nbsp;</span>
                 <span className="word inline-block bg-gradient-to-r from-primary via-primary to-deep bg-clip-text text-transparent">
                   Veterinary
                 </span>
                 <br />
                 <span className="word inline-block bg-gradient-to-r from-primary via-primary to-deep bg-clip-text text-transparent">
-                  Care
+                  Care&nbsp;
                 </span>
-                <span className="word inline-block text-text"> at </span>
+                <span className="word inline-block text-text">at&nbsp;</span>
                 <span className="word inline-block bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
                   Your
                 </span>
