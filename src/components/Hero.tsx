@@ -278,7 +278,7 @@ export default function Hero() {
                   rotate: [-5, 5, -5]
                 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-2 left-1/3 sm:top-0 text-3xl sm:text-4xl drop-shadow-lg"
+                className="absolute -top-12 left-1/3 sm:-top-8 text-3xl sm:text-4xl drop-shadow-lg"
               >
                 🦜
               </motion.div>
@@ -311,6 +311,30 @@ export default function Hero() {
                 className="absolute bottom-1/4 right-0 text-3xl drop-shadow-lg"
               >
                 🐈
+              </motion.div>
+              {/* Animated turtle with head popping in/out */}
+              <motion.div
+                animate={{ 
+                  x: [-3, 3, -3],
+                }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:bottom-0 text-4xl sm:text-5xl drop-shadow-lg"
+              >
+                <motion.span
+                  className="inline-block"
+                  animate={{
+                    scaleX: [1, 1.1, 1, 0.95, 1],
+                    scaleY: [1, 0.9, 1, 1.05, 1],
+                  }}
+                  transition={{ 
+                    duration: 2.5, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    times: [0, 0.3, 0.5, 0.7, 1]
+                  }}
+                >
+                  🐢
+                </motion.span>
               </motion.div>
 
               {/* Logo container with premium styling */}
