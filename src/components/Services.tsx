@@ -447,7 +447,7 @@ export default function Services() {
           
           <p className="text-xl text-text-muted max-w-2xl mx-auto">
             Professional veterinary care delivered to your doorstep. 
-            <span className="block mt-2 text-primary font-medium">Hover over the cards to see them come alive! ✨</span>
+            Here's what we'll offer when we launch.
           </p>
         </div>
 
