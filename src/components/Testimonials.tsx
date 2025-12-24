@@ -214,7 +214,7 @@ export default function Testimonials() {
   }, [testimonialsList])
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-primary/5 overflow-hidden" ref={containerRef}>
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-white to-primary/5 overflow-hidden" ref={containerRef}>
       <div className="container-custom">
         {/* Header */}
         <motion.div 
