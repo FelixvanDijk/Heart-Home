@@ -1,79 +1,144 @@
-import { Sparkles } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Sparkles, Heart } from 'lucide-react'
 import logoImg from '/assets/logo.png'
 
+// Animated text that reveals word by word
+function AnimatedHeadline() {
+  const words = ['Mobile', 'Vet', 'Home', 'Visits']
+  const [visibleWords, setVisibleWords] = useState<number[]>([])
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) {
+      setVisibleWords([0, 1, 2, 3])
+      return
+    }
+
+    words.forEach((_, index) => {
+      setTimeout(() => {
+        setVisibleWords(prev => [...prev, index])
+      }, 400 + index * 150)
+    })
+  }, [])
+
+  return (
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
+      {words.map((word, index) => (
+        <span
+          key={word}
+          className={`inline-block mr-3 md:mr-4 transition-all duration-500 ${
+            visibleWords.includes(index)
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          {word}
+        </span>
+      ))}
+    </h1>
+  )
+}
+
+// Floating decorative elements
+function FloatingElements() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Floating paw prints */}
+      <div className="absolute top-20 left-[10%] text-primary/20 text-4xl animate-float-slow">🐾</div>
+      <div className="absolute top-40 right-[15%] text-accent/20 text-3xl animate-float-medium">🐾</div>
+      <div className="absolute bottom-32 left-[20%] text-secondary/30 text-5xl animate-float-fast">🐾</div>
+      <div className="absolute bottom-20 right-[25%] text-primary/15 text-4xl animate-float-slow">❤️</div>
+      
+      {/* Gradient orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl" />
+    </div>
+  )
+}
+
 export default function Hero() {
+  const [logoLoaded, setLogoLoaded] = useState(false)
+
   return (
     <section
       id="home"
       className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-16"
     >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Soft gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-        
-        {/* Abstract shapes */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/8 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl" />
-        
-        {/* Subtle pattern overlay */}
-        <div 
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23322918' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23322918' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+
+      <FloatingElements />
 
       <div className="container-custom relative z-10 text-center py-8">
-        {/* Logo */}
-        <div className="mb-8 animate-fade-in">
+        {/* Logo with scale-in animation */}
+        <div 
+          className={`mb-8 transition-all duration-700 ease-out ${
+            logoLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+          }`}
+        >
           <img
             src={logoImg}
             alt="Heart @ Home - Mobile Vet"
-            className="mx-auto h-36 md:h-48 lg:h-56 w-auto drop-shadow-lg"
+            className="mx-auto h-36 md:h-48 lg:h-56 w-auto drop-shadow-xl hover:scale-105 transition-transform duration-500"
+            onLoad={() => setLogoLoaded(true)}
           />
         </div>
 
-        {/* Coming Soon Badge */}
-        <div 
-          className="inline-flex items-center gap-2 mb-6 px-5 py-2.5 bg-accent/10 text-accent font-bold text-lg rounded-full border-2 border-accent/20 animate-slide-up"
-          style={{ animationDelay: '0.1s' }}
-        >
+        {/* Coming Soon Badge with pulse */}
+        <div className="inline-flex items-center gap-2 mb-6 px-5 py-2.5 bg-accent/10 text-accent font-bold text-lg rounded-full border-2 border-accent/20 animate-pulse-badge">
           <Sparkles className="w-5 h-5" />
           Coming Soon!
         </div>
 
-        {/* Headline */}
-        <h1 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6 animate-slide-up"
-          style={{ animationDelay: '0.2s' }}
-        >
-          Mobile Vet Home Visits
-        </h1>
+        {/* Animated Headline */}
+        <AnimatedHeadline />
 
-        {/* Subheading */}
-        <p 
-          className="text-xl md:text-2xl text-text-muted max-w-2xl mx-auto mb-10 animate-slide-up leading-relaxed"
-          style={{ animationDelay: '0.3s' }}
-        >
-          Caring, stress-free veterinary care for{' '}
-          <span className="text-primary font-semibold">small animals</span> &{' '}
-          <span className="text-primary font-semibold">exotic pets</span> — in the comfort of your home.
-          <br />
-          <span className="text-lg">Serving Wrexham, Chester & surrounding areas.</span>
+        {/* Handwritten-style tagline */}
+        <p className="text-2xl md:text-3xl text-primary font-medium mb-4 italic" style={{ fontFamily: 'Georgia, serif' }}>
+          "Where care comes to you"
         </p>
 
-        {/* CTA Buttons */}
-        <div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up"
-          style={{ animationDelay: '0.4s' }}
-        >
-          <a href="#register" className="btn-primary text-xl px-8 py-4 w-full sm:w-auto">
-            Register Your Interest
+        {/* Subheading with highlight effect */}
+        <p className="text-xl md:text-2xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+          Caring, stress-free veterinary care for{' '}
+          <span className="text-primary font-semibold relative inline-block group">
+            small animals
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-primary/30 rounded" />
+          </span>{' '}
+          &{' '}
+          <span className="text-primary font-semibold relative inline-block">
+            exotic pets
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-primary/30 rounded" />
+          </span>{' '}
+          — in the comfort of your home.
+          <br />
+          <span className="text-lg flex items-center justify-center gap-2 mt-2">
+            <Heart className="w-4 h-4 text-accent" />
+            Serving Wrexham, Chester & surrounding areas
+            <Heart className="w-4 h-4 text-accent" />
+          </span>
+        </p>
+
+        {/* CTA Buttons with enhanced hover */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="#register" 
+            className="btn-primary text-xl px-8 py-4 w-full sm:w-auto group relative overflow-hidden"
+          >
+            <span className="relative z-10">Register Your Interest</span>
+            <div className="absolute inset-0 bg-primary-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </a>
-          <a href="#services" className="btn-secondary text-xl px-8 py-4 w-full sm:w-auto">
+          <a 
+            href="#services" 
+            className="btn-secondary text-xl px-8 py-4 w-full sm:w-auto hover:shadow-lg"
+          >
             View Services
           </a>
         </div>
@@ -81,4 +146,3 @@ export default function Hero() {
     </section>
   )
 }
-
