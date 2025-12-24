@@ -31,12 +31,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@heartathome.co.uk"
+                  href="mailto:info@heartathomevets.com"
                   className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  {/* PLACEHOLDER: Update with real email */}
-                  info@heartathome.co.uk
+                  info@heartathomevets.com
                 </a>
               </li>
               <li>
