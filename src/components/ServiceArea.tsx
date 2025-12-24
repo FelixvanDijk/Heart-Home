@@ -62,14 +62,14 @@ export default function ServiceArea() {
               <div className="flex flex-wrap gap-3">
                 {areas.map((area, index) => (
                   <span
-                    key={area}
+                    key={area.id}
                     className={`inline-flex items-center gap-2 px-5 py-3 bg-white text-primary font-semibold rounded-full text-lg shadow-lg hover:scale-105 transition-all duration-300 cursor-default ${
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                     }`}
                     style={{ transitionDelay: isVisible ? `${300 + index * 50}ms` : '0ms' }}
                   >
                     <MapPin className="w-4 h-4" />
-                    {area}
+                    {area.name}
                   </span>
                 ))}
               </div>
