@@ -1,43 +1,17 @@
 import { useEffect, useState } from 'react'
 import { Sparkles, Heart } from 'lucide-react'
+import { CyclingTextScramble } from './ui/TextScramble'
 import logoImg from '/assets/logo.png'
 
-// Animated text that reveals word by word
-function AnimatedHeadline() {
-  const words = ['Mobile', 'Vet', 'Home', 'Visits']
-  const [visibleWords, setVisibleWords] = useState<number[]>([])
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) {
-      setVisibleWords([0, 1, 2, 3])
-      return
-    }
-
-    words.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleWords(prev => [...prev, index])
-      }, 400 + index * 150)
-    })
-  }, [])
-
-  return (
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
-      {words.map((word, index) => (
-        <span
-          key={word}
-          className={`inline-block mr-3 md:mr-4 transition-all duration-500 ${
-            visibleWords.includes(index)
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-8'
-          }`}
-        >
-          {word}
-        </span>
-      ))}
-    </h1>
-  )
-}
+// Service taglines to cycle through
+const serviceTaglines = [
+  'Mobile Vet Home Visits',
+  'Home Vaccinations',
+  'Blood Sampling at Home',
+  'Pet Transport Services',
+  'Exotic Animal Care',
+  'Stress-Free Vet Care',
+]
 
 // Floating decorative elements
 function FloatingElements() {
@@ -97,8 +71,17 @@ export default function Hero() {
           Coming Soon!
         </div>
 
-        {/* Animated Headline */}
-        <AnimatedHeadline />
+        {/* Animated Headline with Text Scramble */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6 min-h-[1.2em]">
+          <CyclingTextScramble
+            texts={serviceTaglines}
+            interval={3500}
+            duration={1}
+            speed={0.03}
+            className="inline-block"
+            as="span"
+          />
+        </h1>
 
         {/* Handwritten-style tagline */}
         <p className="text-2xl md:text-3xl text-primary font-medium mb-4 italic" style={{ fontFamily: 'Georgia, serif' }}>
