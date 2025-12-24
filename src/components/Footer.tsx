@@ -127,7 +127,7 @@ export default function Footer() {
             <p>
               Built by{' '}
               <a 
-                href="https://fvandijk.com" 
+                href="https://felixvandijk.dev/business.html" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white/80 hover:text-white underline underline-offset-2 transition-colors"
