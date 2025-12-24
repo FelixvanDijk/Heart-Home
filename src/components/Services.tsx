@@ -7,6 +7,194 @@ import { TextReveal } from './ui/TextReveal'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// SVG Scene Components for hover effects
+const HomeScene = () => (
+  <svg viewBox="0 0 400 200" className="w-full h-full" preserveAspectRatio="xMidYMax slice">
+    {/* Sky gradient */}
+    <defs>
+      <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#59A5AE" stopOpacity="0.3" />
+        <stop offset="100%" stopColor="#D7AF6E" stopOpacity="0.1" />
+      </linearGradient>
+    </defs>
+    <rect fill="url(#skyGradient)" width="400" height="200" />
+    
+    {/* Clouds */}
+    <ellipse cx="80" cy="40" rx="30" ry="15" fill="white" opacity="0.5" />
+    <ellipse cx="100" cy="35" rx="25" ry="12" fill="white" opacity="0.5" />
+    <ellipse cx="300" cy="50" rx="35" ry="18" fill="white" opacity="0.4" />
+    
+    {/* Sun/Moon */}
+    <circle cx="320" cy="45" r="25" fill="#D7AF6E" opacity="0.6" />
+    
+    {/* Ground */}
+    <path d="M0 160 Q100 140 200 155 Q300 170 400 150 L400 200 L0 200 Z" fill="#38524B" opacity="0.3" />
+    
+    {/* House silhouette */}
+    <path d="M150 200 L150 130 L200 90 L250 130 L250 200 Z" fill="#322918" opacity="0.2" />
+    <rect x="180" y="150" width="30" height="50" fill="#59A5AE" opacity="0.3" />
+    
+    {/* Trees */}
+    <path d="M50 200 L50 160 L30 160 L60 120 L40 120 L70 80 L100 120 L80 120 L110 160 L90 160 L90 200 Z" fill="#38524B" opacity="0.25" />
+    <path d="M320 200 L320 170 L305 170 L330 140 L315 140 L340 110 L365 140 L350 140 L375 170 L360 170 L360 200 Z" fill="#38524B" opacity="0.2" />
+  </svg>
+)
+
+// Animated animals that appear on hover
+const HoverAnimals = ({ type }: { type: 'dog' | 'cat' | 'rabbit' | 'bird' | 'turtle' | 'lizard' | 'van' | 'clock' }) => {
+  const animals: Record<string, React.ReactNode> = {
+    dog: (
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="absolute bottom-4 left-4 text-4xl"
+      >
+        🐕
+      </motion.div>
+    ),
+    cat: (
+      <motion.div
+        initial={{ x: 50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className="absolute bottom-4 right-4 text-4xl"
+      >
+        🐈
+      </motion.div>
+    ),
+    rabbit: (
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.2, type: 'spring', bounce: 0.5 }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-3xl"
+      >
+        🐰
+      </motion.div>
+    ),
+    bird: (
+      <motion.div
+        initial={{ y: -20, opacity: 0, rotate: -20 }}
+        animate={{ y: 0, opacity: 1, rotate: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="absolute top-16 right-6 text-3xl"
+      >
+        🦜
+      </motion.div>
+    ),
+    turtle: (
+      <motion.div
+        initial={{ x: -30, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="absolute bottom-4 left-6 text-3xl"
+      >
+        🐢
+      </motion.div>
+    ),
+    lizard: (
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.15 }}
+        className="absolute bottom-6 right-6 text-3xl"
+      >
+        🦎
+      </motion.div>
+    ),
+    van: (
+      <motion.div
+        initial={{ x: -80, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="absolute bottom-4 left-4 text-4xl"
+      >
+        🚐
+      </motion.div>
+    ),
+    clock: (
+      <motion.div
+        initial={{ scale: 0, rotate: -180, opacity: 0 }}
+        animate={{ scale: 1, rotate: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="absolute top-16 right-4 text-3xl"
+      >
+        ⏰
+      </motion.div>
+    ),
+  }
+
+  return <>{animals[type]}</>
+}
+
+// Map service index to animal type
+const getAnimalType = (index: number): 'dog' | 'cat' | 'rabbit' | 'bird' | 'turtle' | 'lizard' | 'van' | 'clock' => {
+  const types: ('dog' | 'cat' | 'rabbit' | 'bird' | 'turtle' | 'lizard' | 'van' | 'clock')[] = [
+    'dog',    // Sick Pet Consultations
+    'rabbit', // Vaccinations
+    'cat',    // Blood Sampling
+    'turtle', // Blood Pressure
+    'lizard', // Exotic Animals
+    'van',    // Pet Transport
+    'van',    // Practice Transport
+    'clock',  // Out of Hours
+  ]
+  return types[index] || 'dog'
+}
+
+// Paw prints that scatter on hover
+const PawPrints = () => (
+  <>
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 0.3, scale: 1 }}
+      transition={{ duration: 0.3, delay: 0 }}
+      className="absolute top-8 left-8 text-2xl rotate-[-30deg]"
+    >
+      🐾
+    </motion.div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 0.25, scale: 1 }}
+      transition={{ duration: 0.3, delay: 0.1 }}
+      className="absolute top-20 left-16 text-xl rotate-[-15deg]"
+    >
+      🐾
+    </motion.div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 0.2, scale: 1 }}
+      transition={{ duration: 0.3, delay: 0.2 }}
+      className="absolute top-12 right-12 text-lg rotate-[20deg]"
+    >
+      🐾
+    </motion.div>
+  </>
+)
+
+// Heart that floats up on hover
+const FloatingHearts = () => (
+  <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: [0, 1, 0], y: -30 }}
+      transition={{ duration: 1.5, delay: 0.3 }}
+      className="absolute top-1/3 right-1/4 text-xl text-accent"
+    >
+      ❤️
+    </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: [0, 1, 0], y: -40 }}
+      transition={{ duration: 1.8, delay: 0.5 }}
+      className="absolute top-1/2 left-1/3 text-lg text-accent"
+    >
+      💕
+    </motion.div>
+  </>
+)
+
 // 3D Tilt Card Component
 function TiltCard({ 
   children, 
@@ -25,8 +213,6 @@ function TiltCard({
   
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['8deg', '-8deg'])
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-8deg', '8deg'])
-  const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ['0%', '100%'])
-  const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ['0%', '100%'])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return
@@ -56,19 +242,12 @@ function TiltCard({
       }}
       className={`relative ${className}`}
     >
-      {/* Glare effect */}
-      <motion.div
-        className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(circle at ${glareX} ${glareY}, rgba(255,255,255,0.15), transparent 60%)`,
-        }}
-      />
       {children}
     </motion.div>
   )
 }
 
-// Service Card Component
+// Service Card Component with hover scene
 function ServiceCard({ 
   service, 
   index, 
@@ -79,6 +258,7 @@ function ServiceCard({
   featured?: boolean
 }) {
   const Icon = service.icon
+  const animalType = getAnimalType(index)
 
   return (
     <TiltCard 
@@ -95,15 +275,28 @@ function ServiceCard({
           transform: 'translateZ(50px)',
         }}
       >
-        {/* Animated gradient border on hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary via-accent to-secondary p-[2px] animate-gradient-rotate">
-            <div className="w-full h-full bg-white rounded-2xl" />
-          </div>
+        {/* Background scene that fades in on hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+          <HomeScene />
         </div>
 
-        {/* Background gradient on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+        {/* Animated paw prints */}
+        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          <PawPrints />
+        </div>
+
+        {/* Animated animal that appears on hover */}
+        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <HoverAnimals type={animalType} />
+          <FloatingHearts />
+        </div>
+
+        {/* Animated gradient border on hover */}
+        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary via-accent to-secondary p-[2px] animate-gradient-rotate">
+            <div className="w-full h-full bg-white/90 rounded-2xl backdrop-blur-sm" />
+          </div>
+        </div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col" style={{ transform: 'translateZ(60px)' }}>
@@ -112,9 +305,22 @@ function ServiceCard({
             {(index + 1).toString().padStart(2, '0')}
           </div>
 
-          {/* Icon with animation */}
-          <div className={`${featured ? 'w-20 h-20 mb-6' : 'w-16 h-16 mb-4'} rounded-2xl bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-primary/20`}>
-            <Icon className={`${featured ? 'w-10 h-10' : 'w-8 h-8'} text-primary group-hover:scale-110 transition-transform duration-300`} />
+          {/* Icon that transforms on hover */}
+          <div className={`${featured ? 'w-20 h-20 mb-6' : 'w-16 h-16 mb-4'} rounded-2xl bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-deep relative overflow-hidden`}>
+            {/* Original icon */}
+            <Icon className={`${featured ? 'w-10 h-10' : 'w-8 h-8'} text-primary group-hover:text-white transition-all duration-300 group-hover:scale-0 group-hover:opacity-0 absolute`} />
+            
+            {/* Transformed icon on hover - becomes a heart with paw */}
+            <span className={`${featured ? 'text-3xl' : 'text-2xl'} scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 absolute`}>
+              {index === 0 && '💉'}
+              {index === 1 && '💊'}
+              {index === 2 && '🩸'}
+              {index === 3 && '❤️'}
+              {index === 4 && '🦎'}
+              {index === 5 && '🚗'}
+              {index === 6 && '🏥'}
+              {index === 7 && '🌙'}
+            </span>
           </div>
 
           {/* Title */}
@@ -123,22 +329,26 @@ function ServiceCard({
           </h3>
 
           {/* Description */}
-          <p className={`text-text-muted ${featured ? 'text-lg' : 'text-base'} leading-relaxed flex-grow`}>
+          <p className={`text-text-muted ${featured ? 'text-lg' : 'text-base'} leading-relaxed flex-grow group-hover:text-text transition-colors duration-300`}>
             {service.description}
           </p>
 
           {/* Bottom section */}
-          <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+          <div className="mt-4 pt-4 border-t border-gray-100 group-hover:border-primary/20 flex items-center justify-between transition-colors duration-300">
             <span className="inline-flex items-center text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full group-hover:bg-accent group-hover:text-white transition-all duration-300">
               Coming soon
             </span>
             
             {/* Arrow that appears on hover */}
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-              <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <motion.div 
+              className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-primary transition-all duration-300"
+              initial={{ x: 20, opacity: 0 }}
+              whileHover={{ scale: 1.1 }}
+            >
+              <svg className="w-5 h-5 text-primary group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -155,7 +365,6 @@ export default function Services() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReducedMotion) return
 
-    // Animate cards in with stagger and 3D effect
     gsap.fromTo('.service-card',
       { 
         opacity: 0, 
@@ -187,7 +396,6 @@ export default function Services() {
     }
   }, [])
 
-  // Define which services are featured (larger cards)
   const featuredIndices = [0, 4]
 
   return (
@@ -219,7 +427,7 @@ export default function Services() {
           
           <p className="text-xl text-text-muted max-w-2xl mx-auto">
             Professional veterinary care delivered to your doorstep. 
-            Here's what we'll offer when we launch.
+            <span className="block mt-2 text-primary font-medium">Hover over the cards to see them come alive! ✨</span>
           </p>
         </div>
 
