@@ -134,7 +134,7 @@ export default function Hero() {
 
               {/* Benefit badges */}
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                {benefits.map((benefit, index) => (
+                {benefits.map((benefit) => (
                   <motion.div
                     key={benefit.text}
                     initial={{ opacity: 0, y: 10 }}
