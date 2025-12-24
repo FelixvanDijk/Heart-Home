@@ -311,6 +311,18 @@
   animation: shimmer 2s infinite;
 }
 
+/* Gradient rotation animation */
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-rotate {
+  background-size: 200% 200%;
+  animation: gradient-rotate 3s ease infinite;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-float-slow,
@@ -318,7 +330,29 @@
   .animate-float-fast,
   .animate-pulse-slow,
   .animate-pulse-badge,
-  .animate-shimmer {
+  .animate-shimmer,
+  .animate-gradient-rotate {
     animation: none;
   }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

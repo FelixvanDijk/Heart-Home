@@ -11,6 +11,7 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import IntroAnimation from './components/IntroAnimation'
+import SmoothScroll from './components/SmoothScroll'
 
 function App() {
   const [introComplete, setIntroComplete] = useState(false)
@@ -20,24 +21,26 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Intro Animation */}
-      {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
-      
-      <ScrollProgress />
-      <Header />
-      <main>
-        <Hero />
-        <AnimatedCounter />
-        <Services />
-        <ServiceArea />
-        <Testimonials />
-        <RegisterForm />
-        <Team />
-        <FAQ />
-      </main>
-      <Footer />
-    </div>
+    <SmoothScroll>
+      <div className="min-h-screen bg-background">
+        {/* Intro Animation */}
+        {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
+        
+        <ScrollProgress />
+        <Header />
+        <main>
+          <Hero />
+          <AnimatedCounter />
+          <Services />
+          <ServiceArea />
+          <Testimonials />
+          <RegisterForm />
+          <Team />
+          <FAQ />
+        </main>
+        <Footer />
+      </div>
+    </SmoothScroll>
   )
 }
 
