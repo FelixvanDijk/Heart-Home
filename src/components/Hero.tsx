@@ -273,6 +273,17 @@ export default function Hero() {
               </motion.div>
               <motion.div
                 animate={{ 
+                  y: [-8, 8, -8],
+                  x: [-3, 3, -3],
+                  rotate: [-5, 5, -5]
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-2 left-1/3 sm:top-0 text-3xl sm:text-4xl drop-shadow-lg"
+              >
+                🦜
+              </motion.div>
+              <motion.div
+                animate={{ 
                   y: [10, -10, 10],
                   scale: [1, 1.1, 1]
                 }}
