@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import AnimatedCounter from './components/AnimatedCounter'
 import Services from './components/Services'
 import ServiceArea from './components/ServiceArea'
+import Testimonials from './components/Testimonials'
 import RegisterForm from './components/RegisterForm'
 import Team from './components/Team'
 import FAQ from './components/FAQ'
@@ -30,6 +31,7 @@ function App() {
         <AnimatedCounter />
         <Services />
         <ServiceArea />
+        <Testimonials />
         <RegisterForm />
         <Team />
         <FAQ />
