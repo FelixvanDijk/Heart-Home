@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Sparkles, Heart } from 'lucide-react'
 import { CyclingTextScramble } from './ui/TextScramble'
 import logoImg from '/assets/logo.png'
