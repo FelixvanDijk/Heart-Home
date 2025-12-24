@@ -13,30 +13,50 @@ const HomeScene = () => (
     {/* Sky gradient */}
     <defs>
       <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#59A5AE" stopOpacity="0.3" />
-        <stop offset="100%" stopColor="#D7AF6E" stopOpacity="0.1" />
+        <stop offset="0%" stopColor="#59A5AE" stopOpacity="0.6" />
+        <stop offset="100%" stopColor="#D7AF6E" stopOpacity="0.4" />
+      </linearGradient>
+      <linearGradient id="sunGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#FFD700" stopOpacity="1" />
+        <stop offset="100%" stopColor="#D7AF6E" stopOpacity="0.8" />
       </linearGradient>
     </defs>
     <rect fill="url(#skyGradient)" width="400" height="200" />
     
     {/* Clouds */}
-    <ellipse cx="80" cy="40" rx="30" ry="15" fill="white" opacity="0.5" />
-    <ellipse cx="100" cy="35" rx="25" ry="12" fill="white" opacity="0.5" />
-    <ellipse cx="300" cy="50" rx="35" ry="18" fill="white" opacity="0.4" />
+    <ellipse cx="80" cy="40" rx="30" ry="15" fill="white" opacity="0.9" />
+    <ellipse cx="100" cy="35" rx="25" ry="12" fill="white" opacity="0.85" />
+    <ellipse cx="60" cy="45" rx="20" ry="10" fill="white" opacity="0.8" />
+    <ellipse cx="300" cy="50" rx="35" ry="18" fill="white" opacity="0.85" />
+    <ellipse cx="330" cy="45" rx="20" ry="10" fill="white" opacity="0.8" />
     
-    {/* Sun/Moon */}
-    <circle cx="320" cy="45" r="25" fill="#D7AF6E" opacity="0.6" />
+    {/* Sun with glow */}
+    <circle cx="340" cy="45" r="35" fill="#FFD700" opacity="0.3" />
+    <circle cx="340" cy="45" r="28" fill="url(#sunGlow)" opacity="0.9" />
     
-    {/* Ground */}
-    <path d="M0 160 Q100 140 200 155 Q300 170 400 150 L400 200 L0 200 Z" fill="#38524B" opacity="0.3" />
+    {/* Hills/Ground */}
+    <path d="M0 180 Q50 150 100 165 Q150 180 200 160 Q250 140 300 155 Q350 170 400 150 L400 200 L0 200 Z" fill="#38524B" opacity="0.7" />
+    <path d="M0 190 Q100 170 200 180 Q300 190 400 175 L400 200 L0 200 Z" fill="#38524B" opacity="0.9" />
     
-    {/* House silhouette */}
-    <path d="M150 200 L150 130 L200 90 L250 130 L250 200 Z" fill="#322918" opacity="0.2" />
-    <rect x="180" y="150" width="30" height="50" fill="#59A5AE" opacity="0.3" />
+    {/* House */}
+    <path d="M160 200 L160 130 L200 95 L240 130 L240 200 Z" fill="#8B6914" opacity="0.85" />
+    <path d="M160 130 L200 95 L240 130 Z" fill="#5D4E37" opacity="0.9" />
+    <rect x="175" y="145" width="20" height="25" fill="#59A5AE" opacity="0.9" />
+    <rect x="205" y="145" width="20" height="25" fill="#59A5AE" opacity="0.9" />
+    <rect x="185" y="175" width="30" height="25" fill="#5D4E37" opacity="0.8" />
     
     {/* Trees */}
-    <path d="M50 200 L50 160 L30 160 L60 120 L40 120 L70 80 L100 120 L80 120 L110 160 L90 160 L90 200 Z" fill="#38524B" opacity="0.25" />
-    <path d="M320 200 L320 170 L305 170 L330 140 L315 140 L340 110 L365 140 L350 140 L375 170 L360 170 L360 200 Z" fill="#38524B" opacity="0.2" />
+    <path d="M40 200 L40 165 L20 165 L50 125 L30 125 L60 85 L90 125 L70 125 L100 165 L80 165 L80 200 Z" fill="#38524B" opacity="0.85" />
+    <rect x="55" y="170" width="10" height="30" fill="#5D4E37" opacity="0.7" />
+    
+    <path d="M300 200 L300 175 L285 175 L310 145 L295 145 L320 115 L345 145 L330 145 L355 175 L340 175 L340 200 Z" fill="#38524B" opacity="0.8" />
+    <rect x="315" y="180" width="10" height="20" fill="#5D4E37" opacity="0.7" />
+    
+    <path d="M370 200 L370 180 L360 180 L380 155 L370 155 L390 130 L410 155 L400 155 L420 180 L410 180 L410 200 Z" fill="#38524B" opacity="0.75" />
+    
+    {/* Grass/bushes */}
+    <ellipse cx="130" cy="195" rx="25" ry="10" fill="#4A7C59" opacity="0.7" />
+    <ellipse cx="270" cy="192" rx="20" ry="8" fill="#4A7C59" opacity="0.65" />
   </svg>
 )
 
