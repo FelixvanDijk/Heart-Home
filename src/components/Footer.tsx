@@ -1,4 +1,5 @@
 import { Heart, Mail, Phone, Facebook, Instagram } from 'lucide-react'
+import logoImg from '/assets/logo.png'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="./assets/logo.png"
+                src={logoImg}
                 alt="Heart @ Home"
                 className="h-16 w-auto bg-white rounded-lg p-1"
               />
@@ -123,7 +124,17 @@ export default function Footer() {
             <p className="flex items-center gap-1">
               © {currentYear} Heart @ Home. Made with <Heart className="w-4 h-4 text-accent" /> for pets.
             </p>
-            <p>Mobile veterinary services coming soon.</p>
+            <p>
+              Built by{' '}
+              <a 
+                href="https://fvandijk.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white underline underline-offset-2 transition-colors"
+              >
+                F van Dijk Ltd
+              </a>
+            </p>
           </div>
         </div>
       </div>

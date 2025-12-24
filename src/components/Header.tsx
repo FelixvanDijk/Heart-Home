@@ -1,23 +1,38 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import logoImg from '/assets/logo.png'
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#register', label: 'Register Interest' },
-  { href: '#team', label: 'Meet the Team' },
-  { href: '#faq', label: 'FAQs' },
+  { href: '#home', label: 'Home', id: 'home' },
+  { href: '#services', label: 'Services', id: 'services' },
+  { href: '#register', label: 'Register Interest', id: 'register' },
+  { href: '#team', label: 'Meet the Team', id: 'team' },
+  { href: '#faq', label: 'FAQs', id: 'faq' },
 ]
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
+      
+      // Determine active section based on scroll position
+      const sections = navLinks.map(link => document.getElementById(link.id))
+      const scrollPos = window.scrollY + 150 // Offset for header height
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i]
+        if (section && section.offsetTop <= scrollPos) {
+          setActiveSection(navLinks[i].id)
+          break
+        }
+      }
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial check
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -42,7 +57,7 @@ export default function Header() {
             onClick={handleNavClick}
           >
             <img
-              src="./assets/logo.png"
+              src={logoImg}
               alt="Heart @ Home"
               className="h-12 md:h-14 w-auto transition-transform group-hover:scale-105"
             />
@@ -55,10 +70,16 @@ export default function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-text font-medium hover:text-primary transition-colors py-2 relative group"
+                  className={`text-text font-medium hover:text-primary transition-colors py-2 relative group ${
+                    activeSection === link.id ? 'text-primary' : ''
+                  }`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span 
+                    className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                      activeSection === link.id ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} 
+                  />
                 </a>
               </li>
             ))}

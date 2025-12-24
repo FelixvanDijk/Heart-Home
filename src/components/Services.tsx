@@ -59,12 +59,15 @@ export default function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-text-muted mb-6">
+        <div className="text-center mt-16 pt-8 border-t border-gray-100">
+          <p className="text-xl text-text mb-4">
             Interested in a service not listed here?
           </p>
-          <a href="#register" className="btn-secondary">
-            Let us know what you need
+          <a 
+            href="#register" 
+            className="inline-flex items-center text-primary font-semibold text-lg hover:underline underline-offset-4"
+          >
+            Let us know what you need →
           </a>
         </div>
       </div>

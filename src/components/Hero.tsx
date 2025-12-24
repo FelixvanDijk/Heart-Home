@@ -1,10 +1,11 @@
-import { ChevronDown, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
+import logoImg from '/assets/logo.png'
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-16"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -25,13 +26,13 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container-custom relative z-10 text-center py-16">
+      <div className="container-custom relative z-10 text-center py-8">
         {/* Logo */}
         <div className="mb-8 animate-fade-in">
           <img
-            src="./assets/logo.png"
+            src={logoImg}
             alt="Heart @ Home - Mobile Vet"
-            className="mx-auto h-40 md:h-52 lg:h-64 w-auto drop-shadow-lg"
+            className="mx-auto h-36 md:h-48 lg:h-56 w-auto drop-shadow-lg"
           />
         </div>
 
@@ -74,21 +75,6 @@ export default function Hero() {
           </a>
           <a href="#services" className="btn-secondary text-xl px-8 py-4 w-full sm:w-auto">
             View Services
-          </a>
-        </div>
-
-        {/* Scroll indicator */}
-        <div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block"
-          style={{ animationDelay: '1s' }}
-        >
-          <a
-            href="#services"
-            className="flex flex-col items-center text-text-muted hover:text-primary transition-colors"
-            aria-label="Scroll to services"
-          >
-            <span className="text-sm font-medium mb-2">Learn more</span>
-            <ChevronDown className="w-6 h-6" />
           </a>
         </div>
       </div>

@@ -408,20 +408,20 @@ Other Services Requested: ${formData.otherServices || 'None'}
             </div>
 
             {/* Submit Button */}
-            <div className="mt-8 pt-6 border-t border-gray-100">
+            <div className="mt-8 pt-8 border-t border-gray-100 text-center md:text-left">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary w-full md:w-auto"
+                className="btn-accent w-full md:w-auto text-xl px-10 py-4 shadow-lg hover:shadow-xl"
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <Loader2 className="w-6 h-6 animate-spin" />
                     Submitting...
                   </>
                 ) : (
                   <>
-                    <Send className="w-5 h-5" />
+                    <Send className="w-6 h-6" />
                     Register My Interest
                   </>
                 )}
