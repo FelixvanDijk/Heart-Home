@@ -369,22 +369,27 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
           {/* Floating paw prints in background */}
           {(phase === 'animals' || phase === 'gathered') && (
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              {[...Array(8)].map((_, i) => (
+              {[...Array(12)].map((_, i) => (
                 <motion.span
                   key={i}
-                  className="absolute text-xl text-primary/10"
+                  className="absolute text-2xl drop-shadow-md"
+                  style={{ 
+                    color: i % 3 === 0 ? '#59A5AE' : i % 3 === 1 ? '#8B6914' : '#38524B',
+                    opacity: 0.7,
+                  }}
                   initial={{ 
                     x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
                     y: typeof window !== 'undefined' ? window.innerHeight + 50 : 800,
                     rotate: Math.random() * 360,
+                    scale: 0.8 + Math.random() * 0.6,
                   }}
                   animate={{ 
                     y: -100,
                     rotate: Math.random() * 360 + 180,
                   }}
                   transition={{
-                    duration: 4 + Math.random() * 2,
-                    delay: i * 0.3,
+                    duration: 3 + Math.random() * 2,
+                    delay: i * 0.2,
                     ease: "linear",
                   }}
                 >
