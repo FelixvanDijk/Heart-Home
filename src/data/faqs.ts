@@ -6,44 +6,43 @@ export interface FAQ {
 
 export const faqs: FAQ[] = [
   {
-    id: 'launch',
-    question: 'When are you launching?',
-    answer: "We're working hard to launch soon! Register your interest and we'll let you know as soon as we're ready to start booking appointments. We can't wait to meet you and your pets.",
+    id: 'nervous-pets',
+    question: 'Do you treat nervous pets?',
+    answer: 'Yes — home visits are often ideal for nervous pets. However, in certain circumstances for animals that are particularly anxious, we can administer medication to help them feel even more relaxed in their own home.',
+  },
+  {
+    id: 'emergency',
+    question: 'Do you offer emergency services?',
+    answer: 'While we can deal with some emergencies, our options are often limited in the home setting. In such circumstances, it is often best to be seen at a vet with hospital facilities. Please contact us and we will advise whether it is likely something we can deal with or whether your pet is better seen at a practice with hospital facilities.',
+  },
+  {
+    id: 'what-pets',
+    question: 'What pets do you see?',
+    answer: 'We see dogs, cats, and exotic species including small mammals (rabbits, guinea pigs, hamsters), reptiles, and birds. Suitability for exotic pet visits is assessed on a case-by-case basis.',
+  },
+  {
+    id: 'prepare',
+    question: 'Do I need to prepare anything?',
+    answer: 'Usually just a quiet, confined space where we can examine your pet, and any relevant medical history or previous vet records. We\'ll let you know if anything specific is needed when you book.',
   },
   {
     id: 'areas',
     question: 'What areas do you cover?',
-    answer: 'We plan to cover Wrexham, Chester, Ellesmere Port, Whitchurch, Mold, Oswestry, and surrounding areas. If you\'re unsure whether we\'ll reach you, please register your interest and let us know your location.',
+    answer: 'We plan to cover Wrexham, Chester, Ellesmere Port, Whitchurch, Mold, Oswestry, and surrounding areas. If you\'re unsure whether we\'ll reach you, please contact us — we\'re happy to help.',
   },
   {
-    id: 'exotics',
-    question: 'Do you treat exotic pets?',
-    answer: 'Yes! We love exotic pets. Our team has experience with reptiles, birds, small mammals like rabbits and guinea pigs, and other non-traditional pets. Home visits can be especially beneficial for exotics who may find travel stressful.',
-  },
-  {
-    id: 'emergency',
-    question: 'What if my pet has an emergency?',
-    answer: 'For emergencies, please contact your nearest emergency or out-of-hours veterinary provider immediately. Our service is not designed for emergencies, but we can help with routine and non-urgent care once we launch.',
-  },
-  {
-    id: 'transport',
-    question: 'How does the transport service work?',
-    answer: 'We can safely transport your pet between your home and a veterinary practice, or between two practices. This is ideal if you can\'t drive, don\'t have a car, or if your pet needs to see a specialist. We\'ll handle everything with care.',
-  },
-  {
-    id: 'vaccinations',
-    question: 'Can you do vaccinations and boosters?',
-    answer: 'Absolutely! We offer full vaccination services including primary courses for puppies, kittens, and rabbits, as well as annual boosters. Getting vaccinated at home can be much less stressful for nervous pets.',
+    id: 'launch',
+    question: 'When are you launching?',
+    answer: 'We\'re working hard to launch soon! Register your interest and we\'ll let you know as soon as we\'re ready to start booking appointments. We can\'t wait to meet you and your pets.',
   },
   {
     id: 'cost',
     question: 'How much do home visits cost?',
-    answer: 'Our pricing will be competitive and transparent. Home visits do involve a call-out fee to cover travel, but many clients find the convenience and reduced stress well worth it. Full pricing will be available when we launch.',
+    answer: 'Our pricing will be transparent and competitive. Home visits do involve a call-out fee to cover travel, but many clients find the convenience and reduced stress well worth it. Full pricing will be available when we launch, and payment is due at the time of the visit.',
   },
   {
     id: 'booking',
     question: 'How do I book an appointment?',
-    answer: 'We\'re not taking bookings just yet, but if you register your interest, you\'ll be among the first to know when we open our diary. We\'ll make booking as easy as possible.',
+    answer: 'You can contact us via phone, email, or our online booking form. Include your location, pet details, reason for visit, and any relevant history. We\'ll get back to you promptly to arrange your home visit.',
   },
 ]
-

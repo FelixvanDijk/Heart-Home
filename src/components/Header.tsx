@@ -5,8 +5,8 @@ import logoImg from '/assets/logo.png'
 const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
   { href: '#services', label: 'Services', id: 'services' },
+  { href: '#about', label: 'About Us', id: 'about' },
   { href: '#testimonials', label: 'Testimonials', id: 'testimonials' },
-  { href: '#register', label: 'Register Interest', id: 'register' },
   { href: '#team', label: 'Meet the Team', id: 'team' },
   { href: '#faq', label: 'FAQs', id: 'faq' },
 ]
@@ -91,7 +91,7 @@ export default function Header() {
             href="#register"
             className="hidden lg:inline-flex btn-primary text-base px-5 py-2.5 min-h-0"
           >
-            Register Interest
+            Book a Home Visit
           </a>
 
           {/* Mobile Menu Button */}
@@ -134,7 +134,7 @@ export default function Header() {
                 className="btn-primary w-full text-base"
                 onClick={handleNavClick}
               >
-                Register Interest
+                Book a Home Visit
               </a>
             </li>
           </ul>
@@ -143,4 +143,3 @@ export default function Header() {
     </header>
   )
 }
-

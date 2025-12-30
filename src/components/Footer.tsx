@@ -1,4 +1,4 @@
-import { Heart, Mail, Phone, Facebook, Instagram } from 'lucide-react'
+import { Heart, Mail, Phone, Facebook, Instagram, MessageCircle } from 'lucide-react'
 import logoImg from '/assets/logo.png'
 
 export default function Footer() {
@@ -6,6 +6,35 @@ export default function Footer() {
 
   return (
     <footer className="bg-deep text-white">
+      {/* Contact Section */}
+      <div id="contact" className="bg-gradient-to-r from-primary to-deep py-16 border-b border-white/10">
+        <div className="container-custom text-center">
+          <div className="max-w-2xl mx-auto">
+            <MessageCircle className="w-12 h-12 mx-auto mb-4 text-white/80" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Speak to the Team</h2>
+            <p className="text-white/80 text-lg mb-8">
+              Have questions? Want to know if we cover your area? We'd love to hear from you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:info@heartathomevets.com"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-semibold text-lg rounded-xl hover:bg-white/90 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                Email Us
+              </a>
+              <a
+                href="#register"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-semibold text-lg rounded-xl hover:bg-accent/90 transition-colors"
+              >
+                <Heart className="w-5 h-5" />
+                Register Interest
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
@@ -103,6 +132,22 @@ export default function Footer() {
                   className="text-white/80 hover:text-white transition-colors"
                 >
                   Register Interest
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#end-of-life"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  End-of-Life Care
                 </a>
               </li>
             </ul>

@@ -4,9 +4,13 @@ import {
   TestTube, 
   HeartPulse, 
   Bird, 
-  Car, 
-  ArrowLeftRight, 
-  Clock 
+  Car,
+  Pill,
+  Activity,
+  Scissors,
+  FileText,
+  Heart,
+  Home
 } from 'lucide-react'
 
 export interface Service {
@@ -14,56 +18,105 @@ export interface Service {
   icon: typeof Stethoscope
   title: string
   description: string
+  category: string
 }
 
 export const services: Service[] = [
+  // General Veterinary Care
   {
-    id: 'consultations',
+    id: 'health-checks',
     icon: Stethoscope,
-    title: 'Sick Pet Consultations',
-    description: 'Full health checks and consultations in the comfort of your home.',
+    title: 'Health Checks & Vaccinations',
+    description: 'Puppy, kitten & rabbit vaccinations, annual boosters, rabies vaccination, and microchipping.',
+    category: 'General Care',
   },
   {
-    id: 'vaccinations',
-    icon: Syringe,
-    title: 'Vaccinations',
-    description: 'Primary courses and booster vaccinations for cats, dogs, and rabbits.',
-  },
-  {
-    id: 'blood-sampling',
-    icon: TestTube,
-    title: 'Blood Sampling',
-    description: 'Convenient blood tests without the stress of travelling to a clinic.',
-  },
-  {
-    id: 'blood-pressure',
+    id: 'sick-pet',
     icon: HeartPulse,
-    title: 'Blood Pressure Measurement',
-    description: 'Accurate readings in a calm, familiar environment.',
+    title: 'Sick Pet Consultations',
+    description: 'Calm assessment for dogs, cats, rabbits, small mammals, reptiles, and birds.',
+    category: 'General Care',
   },
   {
-    id: 'exotics',
+    id: 'diagnostics',
+    icon: TestTube,
+    title: 'Diagnostics at Home',
+    description: 'Blood, urine & faecal tests, skin diagnostics, ultrasound scans, BP measurement, and health screening.',
+    category: 'Diagnostics',
+  },
+  {
+    id: 'chronic-care',
+    icon: Activity,
+    title: 'Ongoing & Specialised Care',
+    description: 'Chronic disease management, senior pet care, behaviour-friendly consultations, palliative & quality-of-life support.',
+    category: 'Ongoing Care',
+  },
+  {
+    id: 'exotic',
     icon: Bird,
-    title: 'Exotic Animal Visits',
-    description: 'Specialist care for reptiles, birds, small mammals, and more.',
+    title: 'Exotic Pet Care',
+    description: 'Health checks, husbandry guidance, and welfare optimisation for reptiles, birds, and small mammals.',
+    category: 'Specialist',
   },
   {
-    id: 'transport-practice',
+    id: 'pain-mobility',
+    icon: Heart,
+    title: 'Pain & Mobility Clinics',
+    description: 'Pain assessments, long-term plans, arthritis support, acupuncture, and laser therapy where appropriate.',
+    category: 'Specialist',
+  },
+  {
+    id: 'nurse-clinics',
+    icon: Scissors,
+    title: 'Nurse Clinics',
+    description: 'Nail clipping, anal glands, ear care, weight clinics, dental checks, medication administration, and more.',
+    category: 'Nursing',
+  },
+  {
+    id: 'medications',
+    icon: Pill,
+    title: 'Medications Delivered',
+    description: 'Transparent pricing, delivered to your door with clear guidance.',
+    category: 'Convenience',
+  },
+  {
+    id: 'end-of-life',
+    icon: Home,
+    title: 'End-of-Life Care',
+    description: 'Quality-of-life assessments, gentle end-of-life care at home, aftercare via Holywell Pet Crematorium.',
+    category: 'Palliative',
+  },
+  {
+    id: 'transport',
     icon: Car,
-    title: 'Pet Transport to Practice',
-    description: 'Safe transport between your home and a bricks & mortar practice.',
+    title: 'Patient Transfers & Referrals',
+    description: 'Safe transport between your home and veterinary practices when needed.',
+    category: 'Additional',
   },
   {
-    id: 'transport-between',
-    icon: ArrowLeftRight,
-    title: 'Practice-to-Practice Transport',
-    description: 'Secure transfers between veterinary practices when needed.',
+    id: 'certificates',
+    icon: FileText,
+    title: 'Animal Health Certificates',
+    description: 'Official documentation for travel and regulatory requirements.',
+    category: 'Additional',
   },
   {
-    id: 'out-of-hours',
-    icon: Clock,
-    title: 'Out of Hours Referrals',
-    description: 'Guidance and connections to emergency service providers.',
+    id: 'parasites',
+    icon: Syringe,
+    title: 'Parasite Prevention & Treatment',
+    description: 'Comprehensive parasite control and prevention plans for your pets.',
+    category: 'General Care',
   },
 ]
 
+// Categories for filtering/grouping
+export const serviceCategories = [
+  'General Care',
+  'Diagnostics',
+  'Ongoing Care',
+  'Specialist',
+  'Nursing',
+  'Palliative',
+  'Additional',
+  'Convenience',
+]

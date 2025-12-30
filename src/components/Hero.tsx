@@ -12,19 +12,19 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Service taglines to cycle through
 const serviceTaglines = [
-  'Mobile Vet Home Visits',
-  'Home Vaccinations',
-  'Blood Sampling at Home',
-  'Pet Transport Services',
-  'Exotic Animal Care',
-  'Stress-Free Vet Care',
+  'Health Checks & Vaccinations',
+  'Chronic & Geriatric Care',
+  'Exotic Pet Specialists',
+  'End-of-Life Care at Home',
+  'Nurse Clinics',
+  'Pain & Mobility Support',
 ]
 
-// Floating benefit badges
+// Floating benefit badges - matching the document
 const benefits = [
-  { icon: MapPin, text: 'We come to you', delay: 0.2 },
-  { icon: Clock, text: 'Flexible scheduling', delay: 0.4 },
-  { icon: Shield, text: 'Experienced team', delay: 0.6 },
+  { icon: Shield, text: 'Less anxiety & fear', delay: 0.2 },
+  { icon: Clock, text: 'Longer, unrushed appointments', delay: 0.4 },
+  { icon: MapPin, text: 'We come to you', delay: 0.6 },
 ]
 
 export default function Hero() {
@@ -134,7 +134,7 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 backdrop-blur-sm text-accent font-semibold text-sm rounded-full border border-accent/20 shadow-lg">
               <Sparkles className="w-4 h-4" />
-              Launching Soon in Your Area
+              Compassion on Wheels
             </div>
           </motion.div>
 
@@ -149,21 +149,21 @@ export default function Hero() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                 style={{ perspective: '1000px' }}
               >
-                <span className="word inline-block text-text">Professional&nbsp;</span>
                 <span className="word inline-block bg-gradient-to-r from-primary via-primary to-deep bg-clip-text text-transparent">
-                  Veterinary
+                  Veterinary&nbsp;
                 </span>
-                <br />
-                <span className="word inline-block bg-gradient-to-r from-primary via-primary to-deep bg-clip-text text-transparent">
-                  Care&nbsp;
-                </span>
-                <span className="word inline-block text-text">at&nbsp;</span>
-                <span className="word inline-block bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-                  Your
-                </span>
+                <span className="word inline-block text-text">care&nbsp;</span>
+                <span className="word inline-block text-text">with</span>
                 <br />
                 <span className="word inline-block bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-                  Doorstep
+                  heart
+                </span>
+                <span className="word inline-block text-text">&nbsp;—&nbsp;</span>
+                <span className="word inline-block bg-gradient-to-r from-primary via-primary to-deep bg-clip-text text-transparent">
+                  at&nbsp;
+                </span>
+                <span className="word inline-block bg-gradient-to-r from-primary via-primary to-deep bg-clip-text text-transparent">
+                  home
                 </span>
               </h1>
 
@@ -192,9 +192,10 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
               >
-                Stress-free veterinary care for small animals and exotic pets. 
-                We bring professional medical services directly to your home across 
-                <span className="text-text font-medium"> Wrexham, Chester</span> and surrounding areas.
+                Calm, professional veterinary care delivered in the comfort of your home.
+                <span className="block mt-2 text-text font-medium">
+                  Less stress for pets. More reassurance for owners.
+                </span>
               </motion.p>
 
               {/* CTA Buttons with Magnetic Effect */}
@@ -208,16 +209,16 @@ export default function Hero() {
                   href="#register"
                   className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden"
                 >
-                  <span className="relative z-10">Register Your Interest</span>
+                  <span className="relative z-10">Book a Home Visit</span>
                   <Heart className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform" />
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </MagneticButton>
                 
                 <MagneticButton
-                  href="#services"
+                  href="#contact"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-text font-semibold text-lg rounded-xl border-2 border-gray-200 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 shadow-sm"
                 >
-                  Explore Services
+                  Speak to the Team
                 </MagneticButton>
               </motion.div>
 

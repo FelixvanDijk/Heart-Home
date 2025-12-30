@@ -151,14 +151,18 @@ const HoverAnimals = ({ type }: { type: 'dog' | 'cat' | 'rabbit' | 'bird' | 'tur
 // Map service index to animal type
 const getAnimalType = (index: number): 'dog' | 'cat' | 'rabbit' | 'bird' | 'turtle' | 'lizard' | 'van' | 'clock' => {
   const types: ('dog' | 'cat' | 'rabbit' | 'bird' | 'turtle' | 'lizard' | 'van' | 'clock')[] = [
-    'dog',    // Sick Pet Consultations
-    'rabbit', // Vaccinations
-    'cat',    // Blood Sampling
-    'turtle', // Blood Pressure
-    'lizard', // Exotic Animals
-    'van',    // Pet Transport
-    'van',    // Practice Transport
-    'clock',  // Out of Hours
+    'dog',    // Health Checks & Vaccinations
+    'cat',    // Sick Pet Consultations
+    'rabbit', // Diagnostics at Home
+    'turtle', // Ongoing & Specialised Care
+    'lizard', // Exotic Pet Care
+    'dog',    // Pain & Mobility Clinics
+    'cat',    // Nurse Clinics
+    'rabbit', // Medications Delivered
+    'dog',    // End-of-Life Care
+    'van',    // Patient Transfers
+    'clock',  // Animal Health Certificates
+    'bird',   // Parasite Prevention
   ]
   return types[index] || 'dog'
 }
@@ -330,16 +334,20 @@ function ServiceCard({
             {/* Original icon */}
             <Icon className={`${featured ? 'w-10 h-10' : 'w-8 h-8'} text-primary group-hover:text-white transition-all duration-300 group-hover:scale-0 group-hover:opacity-0 absolute`} />
             
-            {/* Transformed icon on hover - becomes a heart with paw */}
+            {/* Transformed icon on hover */}
             <span className={`${featured ? 'text-3xl' : 'text-2xl'} scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 absolute`}>
               {index === 0 && '💉'}
-              {index === 1 && '💊'}
-              {index === 2 && '🩸'}
+              {index === 1 && '🩺'}
+              {index === 2 && '🧪'}
               {index === 3 && '❤️'}
               {index === 4 && '🦎'}
-              {index === 5 && '🚗'}
-              {index === 6 && '🏥'}
-              {index === 7 && '🌙'}
+              {index === 5 && '💊'}
+              {index === 6 && '✂️'}
+              {index === 7 && '📦'}
+              {index === 8 && '🏠'}
+              {index === 9 && '🚗'}
+              {index === 10 && '📋'}
+              {index === 11 && '🛡️'}
             </span>
           </div>
 
@@ -416,7 +424,7 @@ export default function Services() {
     }
   }, [])
 
-  const featuredIndices = [0, 4]
+  const featuredIndices = [0, 4] // Health Checks & Exotic Pet Care
 
   return (
     <section 
@@ -451,9 +459,9 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Bento Grid */}
+        {/* Bento Grid - show first 8 services */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
-          {services.map((service, index) => (
+          {services.slice(0, 8).map((service, index) => (
             <div
               key={service.id}
               className={featuredIndices.includes(index) ? 'md:col-span-2' : ''}
@@ -466,6 +474,20 @@ export default function Services() {
             </div>
           ))}
         </div>
+
+        {/* Additional Services */}
+        {services.length > 8 && (
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.slice(8).map((service, index) => (
+              <ServiceCard 
+                key={service.id}
+                service={service} 
+                index={index + 8}
+                featured={false}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
