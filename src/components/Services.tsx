@@ -459,9 +459,9 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Bento Grid - show first 8 services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
-          {services.slice(0, 8).map((service, index) => (
+        {/* Services Grid - All services in one unified layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
             <div
               key={service.id}
               className={featuredIndices.includes(index) ? 'md:col-span-2' : ''}
@@ -474,20 +474,6 @@ export default function Services() {
             </div>
           ))}
         </div>
-
-        {/* Additional Services */}
-        {services.length > 8 && (
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.slice(8).map((service, index) => (
-              <ServiceCard 
-                key={service.id}
-                service={service} 
-                index={index + 8}
-                featured={false}
-              />
-            ))}
-          </div>
-        )}
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
