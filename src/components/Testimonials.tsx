@@ -5,60 +5,60 @@ import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import { cn } from '../lib/utils'
 
-// Placeholder testimonials - these will be replaced with real ones!
+// Placeholder testimonials - factual statements about home vet care benefits
 const testimonials = [
   {
     id: 1,
-    quote: "Having the vet come to our home made such a difference for Max. He's usually so stressed at the clinic, but he was completely relaxed!",
-    name: "Sarah T.",
-    location: "Wrexham",
-    pet: "Max the Labrador",
-    avatar: "ST",
+    quote: "Home visits eliminate the stress of car journeys for pets. Animals often feel more relaxed and comfortable in familiar surroundings.",
+    name: "Coming Soon!",
+    location: "Placeholder Testimonial",
+    pet: "Your Pet Here",
+    avatar: "✨",
     rating: 5,
   },
   {
     id: 2,
-    quote: "Our elderly cat Whiskers really struggles with car journeys. A home visit was the perfect solution - I wish we'd found this sooner!",
-    name: "John & Mary P.",
-    location: "Chester",
-    pet: "Whiskers the Cat",
-    avatar: "JP",
+    quote: "Elderly and unwell pets benefit greatly from home veterinary care, avoiding the physical strain of travelling to a clinic.",
+    name: "Coming Soon!",
+    location: "Placeholder Testimonial",
+    pet: "Your Pet Here",
+    avatar: "✨",
     rating: 5,
   },
   {
     id: 3,
-    quote: "The team was so knowledgeable about our bearded dragon. It's hard to find vets who really understand exotic pets!",
-    name: "Emma L.",
-    location: "Mold",
-    pet: "Spike the Bearded Dragon",
-    avatar: "EL",
+    quote: "Exotic pets like reptiles and birds can be safely examined at home, where temperature and environment are already optimised.",
+    name: "Coming Soon!",
+    location: "Placeholder Testimonial",
+    pet: "Your Pet Here",
+    avatar: "✨",
     rating: 5,
   },
   {
     id: 4,
-    quote: "So convenient! No more wrestling three cats into carriers. The vet came to us and everyone stayed calm.",
-    name: "David R.",
-    location: "Ellesmere Port",
-    pet: "Luna, Milo & Oliver",
-    avatar: "DR",
+    quote: "Multi-pet households save time and stress when the vet comes to them — no need for multiple car journeys or carriers.",
+    name: "Coming Soon!",
+    location: "Placeholder Testimonial",
+    pet: "Your Pet Here",
+    avatar: "✨",
     rating: 5,
   },
   {
     id: 5,
-    quote: "Professional, caring, and my anxious rescue dog actually wagged his tail during the checkup. Amazing service!",
-    name: "Claire M.",
-    location: "Whitchurch",
-    pet: "Buddy the Rescue Dog",
-    avatar: "CM",
+    quote: "Nervous and anxious animals often respond better to veterinary care when they're in their own home environment.",
+    name: "Coming Soon!",
+    location: "Placeholder Testimonial",
+    pet: "Your Pet Here",
+    avatar: "✨",
     rating: 5,
   },
   {
     id: 6,
-    quote: "The transport service was a lifesaver when I couldn't get my rabbit to the specialist. Highly recommend!",
-    name: "Tom & Lisa H.",
-    location: "Oswestry",
-    pet: "Thumper the Rabbit",
-    avatar: "TH",
+    quote: "Pet transport services are convenient when owners are unable to drive or when pets need transferring between veterinary practices.",
+    name: "Coming Soon!",
+    location: "Placeholder Testimonial",
+    pet: "Your Pet Here",
+    avatar: "✨",
     rating: 5,
   },
 ]
@@ -224,19 +224,19 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block text-primary font-semibold text-lg mb-3 tracking-wide uppercase">
-            Happy Pet Parents
+            Benefits of Home Vet Care
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-4">
-            What People Will Say
+            Why Pets Love Home Visits
           </h2>
           <p className="text-xl text-text-muted max-w-2xl mx-auto">
-            These are placeholder testimonials showing the kind of feedback we hope to receive!
+            Here's why home veterinary care makes a difference for pets and their owners.
           </p>
           
           {/* Placeholder notice */}
           <div className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium">
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            Placeholder testimonials - Real reviews coming soon!
+            Real testimonials coming soon!
           </div>
         </motion.div>
 
