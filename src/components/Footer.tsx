@@ -1,11 +1,17 @@
-import { Heart, Mail, Phone, Facebook, Instagram, MessageCircle } from 'lucide-react'
+import { useState } from 'react'
+import { Heart, Mail, Phone, Facebook, Instagram, MessageCircle, FileText } from 'lucide-react'
 import logoImg from '/assets/logo.png'
+import TermsModal from './TermsModal'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const [isTermsOpen, setIsTermsOpen] = useState(false)
 
   return (
     <footer className="bg-deep text-white">
+      {/* Terms Modal */}
+      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+
       {/* Contact Section */}
       <div id="contact" className="bg-gradient-to-r from-primary to-deep py-16 border-b border-white/10">
         <div className="container-custom text-center">
@@ -36,7 +42,7 @@ export default function Footer() {
       </div>
 
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -152,6 +158,35 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Legal</h3>
+            <ul className="space-y-3">
+              <li>
+                <button
+                  onClick={() => setIsTermsOpen(true)}
+                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                >
+                  <FileText className="w-4 h-4" />
+                  Terms & Conditions
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setIsTermsOpen(true)}
+                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                >
+                  <FileText className="w-4 h-4" />
+                  Privacy Policy
+                </button>
+              </li>
+            </ul>
+            <p className="text-white/50 text-sm mt-4">
+              Heart at Home Vets Ltd<br />
+              Registered in England & Wales
+            </p>
+          </div>
         </div>
 
         {/* Emergency Notice */}
@@ -166,23 +201,31 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white/60 text-sm">
             <p className="flex items-center gap-1">
-              © {currentYear} Heart @ Home. Made with <Heart className="w-4 h-4 text-accent" /> for pets.
+              © {currentYear} Heart @ Home Vets Ltd. Made with <Heart className="w-4 h-4 text-accent" /> for pets.
             </p>
-            <p>
-              Built by{' '}
-              <a 
-                href="https://felixvandijk.dev/business.html" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-white underline underline-offset-2 transition-colors"
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setIsTermsOpen(true)}
+                className="hover:text-white transition-colors underline underline-offset-2"
               >
-                F van Dijk Ltd
-              </a>
-            </p>
+                Terms & Conditions
+              </button>
+              <span>•</span>
+              <p>
+                Built by{' '}
+                <a 
+                  href="https://felixvandijk.dev/business.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white underline underline-offset-2 transition-colors"
+                >
+                  F van Dijk Ltd
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </footer>
   )
 }
-

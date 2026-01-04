@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react'
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { areas } from '../data/areas'
 import { services } from '../data/services'
+import TermsModal from './TermsModal'
 
 interface FormData {
   title: string
@@ -13,6 +14,7 @@ interface FormData {
   services: string[]
   otherServices: string
   consent: boolean
+  termsAccepted: boolean
 }
 
 interface FormErrors {
@@ -21,6 +23,7 @@ interface FormErrors {
   email?: string
   area?: string
   consent?: string
+  termsAccepted?: string
 }
 
 const titles = ['Mr', 'Mrs', 'Ms', 'Mx', 'Dr', 'Prefer not to say']
@@ -36,10 +39,12 @@ export default function RegisterForm() {
     services: [],
     otherServices: '',
     consent: false,
+    termsAccepted: false,
   })
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [isTermsOpen, setIsTermsOpen] = useState(false)
 
   const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
 
@@ -66,6 +71,10 @@ export default function RegisterForm() {
 
     if (!formData.consent) {
       newErrors.consent = 'Please agree to be contacted'
+    }
+
+    if (!formData.termsAccepted) {
+      newErrors.termsAccepted = 'Please accept the Terms & Conditions'
     }
 
     setErrors(newErrors)
@@ -147,6 +156,7 @@ Other Services Requested: ${formData.otherServices || 'None'}
       services: [],
       otherServices: '',
       consent: false,
+      termsAccepted: false,
     })
     setErrors({})
     setSubmitStatus('idle')
@@ -181,6 +191,9 @@ Other Services Requested: ${formData.otherServices || 'None'}
 
   return (
     <section id="register" className="section bg-primary/5">
+      {/* Terms Modal */}
+      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+
       <div className="container-custom">
         <div className="max-w-3xl mx-auto">
           {/* Section Header */}
@@ -379,7 +392,38 @@ Other Services Requested: ${formData.otherServices || 'None'}
                 />
               </div>
 
-              {/* Consent */}
+              {/* Terms & Conditions */}
+              <div className="md:col-span-2">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={formData.termsAccepted}
+                    onChange={(e) => setFormData({ ...formData, termsAccepted: e.target.checked })}
+                    className="w-5 h-5 mt-1 rounded border-gray-300 text-primary focus:ring-primary"
+                    aria-invalid={!!errors.termsAccepted}
+                    aria-describedby={errors.termsAccepted ? 'terms-error' : undefined}
+                  />
+                  <span className="text-text">
+                    I have read and agree to the{' '}
+                    <button
+                      type="button"
+                      onClick={() => setIsTermsOpen(true)}
+                      className="text-primary hover:text-primary/80 underline underline-offset-2 font-medium"
+                    >
+                      Terms & Conditions
+                    </button>
+                    .{' '}
+                    <span className="text-accent">*</span>
+                  </span>
+                </label>
+                {errors.termsAccepted && (
+                  <p id="terms-error" className="form-error mt-2">
+                    {errors.termsAccepted}
+                  </p>
+                )}
+              </div>
+
+              {/* Consent to Contact */}
               <div className="md:col-span-2">
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
