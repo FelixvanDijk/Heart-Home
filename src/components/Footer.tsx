@@ -1,16 +1,20 @@
 import { useState } from 'react'
-import { Heart, Mail, Phone, Facebook, Instagram, MessageCircle, FileText } from 'lucide-react'
+import { Heart, Mail, Phone, Facebook, Instagram, MessageCircle, FileText, Shield } from 'lucide-react'
 import logoImg from '/assets/logo.png'
 import TermsModal from './TermsModal'
+import PrivacyModal from './PrivacyModal'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
   const [isTermsOpen, setIsTermsOpen] = useState(false)
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
 
   return (
     <footer className="bg-deep text-white">
       {/* Terms Modal */}
       <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+      {/* Privacy Modal */}
+      <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
 
       {/* Contact Section */}
       <div id="contact" className="bg-gradient-to-r from-primary to-deep py-16 border-b border-white/10">
@@ -172,7 +176,15 @@ export default function Footer() {
                   Terms & Conditions
                 </button>
               </li>
-              {/* TODO: Add Privacy Policy when document is ready */}
+              <li>
+                <button
+                  onClick={() => setIsPrivacyOpen(true)}
+                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                >
+                  <Shield className="w-4 h-4" />
+                  Privacy Policy
+                </button>
+              </li>
             </ul>
             <p className="text-white/50 text-sm mt-4">
               Heart at Home Vets Ltd<br />
@@ -195,12 +207,19 @@ export default function Footer() {
             <p className="flex items-center gap-1">
               © {currentYear} Heart @ Home Vets Ltd. Made with <Heart className="w-4 h-4 text-accent" /> for pets.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap justify-center md:justify-end">
               <button
                 onClick={() => setIsTermsOpen(true)}
                 className="hover:text-white transition-colors underline underline-offset-2"
               >
                 Terms & Conditions
+              </button>
+              <span>•</span>
+              <button
+                onClick={() => setIsPrivacyOpen(true)}
+                className="hover:text-white transition-colors underline underline-offset-2"
+              >
+                Privacy Policy
               </button>
               <span>•</span>
               <p>
