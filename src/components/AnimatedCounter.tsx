@@ -57,9 +57,9 @@ function Counter({ end, duration = 2, suffix = '', prefix = '' }: CounterProps) 
 }
 
 const stats = [
-  { value: 20, suffix: '+', label: 'Years Experience Each', icon: '🏆' },
-  { value: 3, suffix: '', label: 'Expert Team Members', icon: '👩‍⚕️' },
+  { value: 20, suffix: '+', label: 'Years Experience', icon: '🏆' },
   { value: 12, suffix: '+', label: 'Services Offered', icon: '🩺' },
+  { value: 7, suffix: '+', label: 'Areas Covered', icon: '📍' },
   { value: 100, suffix: '%', label: 'Home Visit Focused', icon: '🏠' },
 ]
 
