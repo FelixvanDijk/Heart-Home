@@ -172,15 +172,7 @@ export default function Footer() {
                   Terms & Conditions
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => setIsTermsOpen(true)}
-                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
-                >
-                  <FileText className="w-4 h-4" />
-                  Privacy Policy
-                </button>
-              </li>
+              {/* TODO: Add Privacy Policy when document is ready */}
             </ul>
             <p className="text-white/50 text-sm mt-4">
               Heart at Home Vets Ltd<br />
