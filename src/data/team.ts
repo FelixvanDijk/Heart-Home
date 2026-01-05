@@ -1,5 +1,6 @@
 // Import photos
 import michelePhoto from '/assets/michelle.png'
+import timPhoto from '/assets/tim.png'
 
 export interface TeamMember {
   id: string
@@ -18,6 +19,7 @@ export const team: TeamMember[] = [
     role: 'Veterinary Surgeon',
     bio: 'Timothy brings a calm, practical approach to every home visit. With extensive experience across multiple species, he has a special love for exotic animals. Whether it\'s a bearded dragon, a house rabbit, or a nervous cat, Timothy takes the time to understand each pet\'s unique needs.',
     initials: 'TD',
+    photo: timPhoto,
     color: 'primary',
   },
   {
