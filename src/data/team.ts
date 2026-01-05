@@ -1,3 +1,6 @@
+// Import photos
+import michelePhoto from '/assets/michelle.png'
+
 export interface TeamMember {
   id: string
   name: string
@@ -23,7 +26,7 @@ export const team: TeamMember[] = [
     role: 'Registered Veterinary Nurse',
     bio: 'Michele\'s friendly, reassuring presence makes every visit feel comfortable. She coordinates our transport services and ensures everything runs smoothly behind the scenes. Pets and owners alike love her gentle, caring nature.',
     initials: 'MJ',
-    photo: '/assets/michelle.png',
+    photo: michelePhoto,
     color: 'secondary',
   },
   // TEMPORARILY HIDDEN - Uncomment when ready to add Sandra to website
