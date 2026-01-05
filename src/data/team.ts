@@ -4,8 +4,7 @@ export interface TeamMember {
   role: string
   bio: string
   initials: string
-  // PLACEHOLDER: Replace with actual photo paths when available
-  // photo: string
+  photo?: string // Optional photo path
   color: 'primary' | 'accent' | 'secondary'
 }
 
@@ -24,6 +23,7 @@ export const team: TeamMember[] = [
     role: 'Registered Veterinary Nurse',
     bio: 'Michele\'s friendly, reassuring presence makes every visit feel comfortable. She coordinates our transport services and ensures everything runs smoothly behind the scenes. Pets and owners alike love her gentle, caring nature.',
     initials: 'MJ',
+    photo: '/assets/michelle.png',
     color: 'secondary',
   },
   // TEMPORARILY HIDDEN - Uncomment when ready to add Sandra to website

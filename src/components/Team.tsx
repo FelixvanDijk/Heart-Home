@@ -3,7 +3,7 @@ import { X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react'
 import { team, TeamMember } from '../data/team'
 import { useInView } from '../hooks/useInView'
 
-// Avatar component with initials
+// Avatar component with photo or initials fallback
 function Avatar({ member, size = 'md' }: { member: TeamMember; size?: 'sm' | 'md' | 'lg' }) {
   const sizeClasses = {
     sm: 'w-12 h-12 text-lg',
@@ -17,6 +17,20 @@ function Avatar({ member, size = 'md' }: { member: TeamMember; size?: 'sm' | 'md
     secondary: 'bg-gradient-to-br from-secondary/30 to-secondary/50 text-secondary',
   }
 
+  // If member has a photo, show it
+  if (member.photo) {
+    return (
+      <div className={`${sizeClasses[size]} rounded-full overflow-hidden shadow-lg ring-4 ring-white`}>
+        <img 
+          src={member.photo} 
+          alt={member.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    )
+  }
+
+  // Fallback to initials
   return (
     <div
       className={`${sizeClasses[size]} ${colorClasses[member.color]} rounded-full flex items-center justify-center font-bold shadow-lg`}
