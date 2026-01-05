@@ -18,7 +18,15 @@ export const team: TeamMember[] = [
     initials: 'TD',
     color: 'primary',
   },
-  // TEMPORARILY HIDDEN - Uncomment when ready to add to website
+  {
+    id: 'michele',
+    name: 'Michele Jenkins',
+    role: 'Registered Veterinary Nurse',
+    bio: 'Michele\'s friendly, reassuring presence makes every visit feel comfortable. She coordinates our transport services and ensures everything runs smoothly behind the scenes. Pets and owners alike love her gentle, caring nature.',
+    initials: 'MJ',
+    color: 'secondary',
+  },
+  // TEMPORARILY HIDDEN - Uncomment when ready to add Sandra to website
   // {
   //   id: 'sandra',
   //   name: 'Sandra van Dijk Sheils',
@@ -26,13 +34,5 @@ export const team: TeamMember[] = [
   //   bio: 'Sandra brings warmth and decades of experience to every home visit. She believes that pets recover better in familiar surroundings and is passionate about stress-free veterinary care. Her calm approach puts both pets and their owners at ease.',
   //   initials: 'SvDS',
   //   color: 'accent',
-  // },
-  // {
-  //   id: 'michele',
-  //   name: 'Michele Jenkins',
-  //   role: 'Registered Veterinary Nurse',
-  //   bio: 'Michele\'s friendly, reassuring presence makes every visit feel comfortable. She coordinates our transport services and ensures everything runs smoothly behind the scenes. Pets and owners alike love her gentle, caring nature.',
-  //   initials: 'MJ',
-  //   color: 'secondary',
   // },
 ]

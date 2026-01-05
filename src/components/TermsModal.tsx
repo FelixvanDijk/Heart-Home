@@ -64,7 +64,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
                   Effective Date: To be confirmed
                 </p>
 
-                <p className="text-text-muted mb-6">
+                <p className="text-text-muted mb-4">
                   These Terms and Conditions apply to all veterinary services provided by Heart at Home Vets Ltd 
                   ("Heart at Home Vets", "we", "us", "our"), including all subsidiaries, veterinary practices 
                   operating under the Heart at Home Vets brand, Heart@Home Mobile Vet and any other veterinary 
@@ -133,10 +133,13 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 </p>
 
                 <h3 className="text-xl font-bold text-text mt-8 mb-4">5. Emergencies</h3>
+                <p className="text-text-muted mb-4">
+                  Heart at Home Vets is not an emergency service.
+                </p>
                 <p className="text-text-muted mb-6">
-                  Heart at Home Vets is not an emergency service. If your pet requires urgent or emergency 
-                  treatment, you must contact a local veterinary practice or emergency provider immediately. 
-                  We accept no liability for delays in emergency treatment arising from the nature of mobile services.
+                  If your pet requires urgent or emergency treatment, you must contact a local veterinary practice 
+                  or emergency provider immediately. We accept no liability for delays in emergency treatment 
+                  arising from the nature of mobile services.
                 </p>
 
                 <h3 className="text-xl font-bold text-text mt-8 mb-4">6. Responsible Pet Ownership</h3>
@@ -263,7 +266,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
                   We strongly recommend pet insurance to cover unexpected veterinary costs.
                 </p>
                 <p className="text-text-muted mb-6">
-                  We do not offer direct insurance claims except in exceptional circumstances and by prior agreement only. 
+                  In order to keep our costs as low as possible, we do not offer direct insurance claims. 
                   Fees must be paid at the time of service, and you may then claim reimbursement from your insurer.
                 </p>
 
@@ -324,10 +327,10 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
 
                 <h3 className="text-xl font-bold text-text mt-8 mb-4">23. Complaints Procedure</h3>
                 <p className="text-text-muted mb-4">If you are unhappy with any aspect of our service:</p>
-                <ul className="list-disc pl-6 text-text-muted mb-4">
+                <ol className="list-decimal pl-6 text-text-muted mb-4">
                   <li>Please raise your concern with your attending vet or nurse</li>
                   <li>If unresolved, submit a formal complaint by email</li>
-                </ul>
+                </ol>
                 <p className="text-text-muted mb-4">We aim to:</p>
                 <ul className="list-disc pl-6 text-text-muted mb-4">
                   <li>Acknowledge complaints within 5 working days</li>
@@ -373,4 +376,3 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
     </AnimatePresence>
   )
 }
-
