@@ -58,53 +58,54 @@ const HouseOutline = ({ isVisible }: { isVisible: boolean }) => (
 )
 
 // Animal data with positions - using actual images
+// Positions calibrated to match the logo layout precisely
 const animals = [
   { 
     id: 'lizard',
     image: lizardImg,
-    size: 'w-16 h-10',
+    size: 'w-14 h-8',
     startPos: { x: -300, y: -120 },
-    endPos: { x: -70, y: -75 },
+    endPos: { x: -55, y: -82 },  // Roof top-left, sitting on roof line
     delay: 0,
   },
   { 
     id: 'parrot',
     image: parrotImg,
-    size: 'w-14 h-16',
+    size: 'w-12 h-14',
     startPos: { x: 300, y: -150 },
-    endPos: { x: 65, y: -65 },
+    endPos: { x: 72, y: -72 },  // Roof top-right, perched on edge
     delay: 0.15,
-  },
-  { 
-    id: 'dog',
-    image: dogImg,
-    size: 'w-24 h-20',
-    startPos: { x: -350, y: 0 },
-    endPos: { x: 20, y: 0 },
-    delay: 0.3,
   },
   { 
     id: 'cat',
     image: catImg,
-    size: 'w-20 h-20',
-    startPos: { x: 350, y: 10 },
-    endPos: { x: -50, y: 10 },
+    size: 'w-16 h-18',
+    startPos: { x: -350, y: 10 },
+    endPos: { x: -42, y: 8 },  // Left side, leaning into heart
     delay: 0.2,
+  },
+  { 
+    id: 'dog',
+    image: dogImg,
+    size: 'w-20 h-18',
+    startPos: { x: 350, y: 0 },
+    endPos: { x: 28, y: -8 },  // Right side, head behind/above heart
+    delay: 0.3,
   },
   { 
     id: 'tortoise',
     image: tortoiseImg,
-    size: 'w-20 h-14',
+    size: 'w-18 h-12',
     startPos: { x: -280, y: 200 },
-    endPos: { x: -60, y: 50 },
+    endPos: { x: -58, y: 48 },  // Bottom-left, below cat
     delay: 0.45,
   },
   { 
     id: 'rabbit',
     image: rabbitImg,
-    size: 'w-16 h-18',
+    size: 'w-12 h-14',
     startPos: { x: 280, y: 200 },
-    endPos: { x: 50, y: 40 },
+    endPos: { x: 52, y: 32 },  // Bottom-right, next to dog
     delay: 0.35,
   },
 ]
