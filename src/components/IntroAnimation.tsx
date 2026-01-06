@@ -235,13 +235,13 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
               )}
             </AnimatePresence>
 
-            {/* Logo */}
+            {/* Full Logo with Welcome text beneath */}
             <AnimatePresence>
               {showLogo && (
                 <motion.div
-                  className="absolute"
-                  initial={{ scale: 0.3, opacity: 0, rotate: -10 }}
-                  animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                  className="flex flex-col items-center"
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
                   transition={{
                     type: "spring",
                     stiffness: 100,
@@ -249,40 +249,37 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
                     duration: 0.8,
                   }}
                 >
-                  <img 
+                  <motion.img 
                     src={logoImg} 
-                    alt="Heart @ Home" 
-                    className="w-72 h-72 object-contain drop-shadow-2xl"
+                    alt="Heart @ Home Mobile Vet" 
+                    className="w-80 h-80 md:w-96 md:h-96 object-contain drop-shadow-2xl"
+                    initial={{ scale: 0.8 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, duration: 0.5 }}
                   />
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Welcome text */}
-            <AnimatePresence>
-              {showLogo && (
-                <motion.div 
-                  className="absolute -bottom-24 text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
-                >
-                  <motion.p 
-                    className="text-3xl font-bold text-primary"
-                    initial={{ opacity: 0, y: 10 }}
+                  <motion.div 
+                    className="text-center mt-6"
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
+                    transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
                   >
-                    Welcome!
-                  </motion.p>
-                  <motion.p 
-                    className="text-text-muted mt-2 text-lg"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                  >
-                    Mobile Vet Home Visits
-                  </motion.p>
+                    <motion.p 
+                      className="text-3xl md:text-4xl font-bold text-primary"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      Welcome!
+                    </motion.p>
+                    <motion.p 
+                      className="text-text-muted mt-2 text-lg md:text-xl"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.7 }}
+                    >
+                      Veterinary care with heart — at home
+                    </motion.p>
+                  </motion.div>
                 </motion.div>
               )}
             </AnimatePresence>
