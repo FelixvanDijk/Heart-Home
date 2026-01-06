@@ -101,7 +101,15 @@ export default function EndOfLifeCare() {
             <h4 className="text-xl font-bold text-text mb-4">Aftercare</h4>
             
             <p className="text-text-muted leading-relaxed mb-4">
-              <span className="font-semibold text-text">Holywell Pet Crematorium</span> provides our aftercare services.
+              <a 
+                href="https://petfuneralservices.co.uk/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-semibold text-primary hover:text-primary-dark underline underline-offset-2 transition-colors"
+              >
+                Holywell Pet Crematorium
+              </a>{' '}
+              provides our aftercare services.
             </p>
             
             <p className="text-text-muted leading-relaxed text-sm">
