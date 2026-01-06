@@ -6,9 +6,9 @@ const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
   { href: '#services', label: 'Services', id: 'services' },
   { href: '#about', label: 'About Us', id: 'about' },
-  { href: '#end-of-life', label: 'End-of-Life Care', id: 'end-of-life' },
   { href: '#testimonials', label: 'Testimonials', id: 'testimonials' },
   { href: '#team', label: 'Meet the Team', id: 'team' },
+  { href: '#end-of-life', label: 'End-of-Life Care', id: 'end-of-life' },
   { href: '#faq', label: 'FAQs', id: 'faq' },
 ]
 
