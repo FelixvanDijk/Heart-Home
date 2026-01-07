@@ -161,11 +161,39 @@ function TeamLightbox({
         onClick={onClose}
       />
 
+      {/* Navigation Buttons - Outside the modal */}
+      <button
+        type="button"
+        onClick={onPrev}
+        disabled={!hasPrev}
+        className={`absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white shadow-xl transition-all ${
+          hasPrev
+            ? 'text-text hover:text-primary hover:scale-110 hover:-translate-x-1'
+            : 'text-gray-300 cursor-not-allowed opacity-50'
+        }`}
+        aria-label="Previous team member"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        type="button"
+        onClick={onNext}
+        disabled={!hasNext}
+        className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white shadow-xl transition-all ${
+          hasNext
+            ? 'text-text hover:text-primary hover:scale-110 hover:translate-x-1'
+            : 'text-gray-300 cursor-not-allowed opacity-50'
+        }`}
+        aria-label="Next team member"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
       {/* Modal Content */}
       <div
         ref={modalRef}
         tabIndex={-1}
-        className={`relative bg-white rounded-3xl shadow-2xl max-w-lg w-full p-10 ${
+        className={`relative bg-white rounded-3xl shadow-2xl max-w-lg w-full mx-16 md:mx-20 p-8 md:p-10 max-h-[85vh] overflow-y-auto ${
           prefersReducedMotion ? '' : 'animate-scale-in'
         }`}
       >
@@ -173,45 +201,15 @@ function TeamLightbox({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-text-muted hover:text-text hover:bg-gray-100 rounded-full transition-all duration-200 hover:rotate-90"
+          className="absolute top-4 right-4 p-2 text-text-muted hover:text-text hover:bg-gray-100 rounded-full transition-all duration-200 hover:rotate-90"
           aria-label="Close"
         >
           <X className="w-6 h-6" />
         </button>
 
-        {/* Navigation Buttons */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-2">
-          <button
-            type="button"
-            onClick={onPrev}
-            disabled={!hasPrev}
-            className={`p-3 rounded-full bg-white shadow-xl pointer-events-auto transition-all ${
-              hasPrev
-                ? 'text-text hover:text-primary hover:scale-110 hover:-translate-x-1'
-                : 'text-gray-300 cursor-not-allowed'
-            }`}
-            aria-label="Previous team member"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            type="button"
-            onClick={onNext}
-            disabled={!hasNext}
-            className={`p-3 rounded-full bg-white shadow-xl pointer-events-auto transition-all ${
-              hasNext
-                ? 'text-text hover:text-primary hover:scale-110 hover:translate-x-1'
-                : 'text-gray-300 cursor-not-allowed'
-            }`}
-            aria-label="Next team member"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-
         {/* Content */}
-        <div className="text-center">
-          <div className="flex justify-center mb-8">
+        <div className="text-center pt-4">
+          <div className="flex justify-center mb-6">
             <div className="relative">
               <Avatar member={member} size="lg" />
               <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-lg">
@@ -219,11 +217,11 @@ function TeamLightbox({
               </div>
             </div>
           </div>
-          <h2 id="team-member-name" className="text-3xl font-bold text-text mb-2">
+          <h2 id="team-member-name" className="text-2xl md:text-3xl font-bold text-text mb-2">
             {member.name}
           </h2>
-          <p className="text-primary font-semibold text-xl mb-6">{member.role}</p>
-          <p className="text-text-muted text-lg leading-relaxed">{member.bio}</p>
+          <p className="text-primary font-semibold text-lg md:text-xl mb-6">{member.role}</p>
+          <p className="text-text-muted text-base md:text-lg leading-relaxed whitespace-pre-line">{member.bio}</p>
         </div>
       </div>
     </div>
