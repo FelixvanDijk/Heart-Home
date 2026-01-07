@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 import { CreditCard, Heart, Shield, Sparkles } from 'lucide-react'
 import { TextReveal } from './ui/TextReveal'
 
-const healthClubs = [
-  { name: 'Preventative Care PHC', description: 'Regular check-ups and preventative treatments' },
-  { name: 'Arthritis PHC', description: 'Ongoing support for pets with arthritis' },
-  { name: 'Feline Renal PHC', description: 'Specialised care for cats with kidney conditions' },
-  { name: 'Feline Hyperthyroid PHC', description: 'Management for hyperthyroid cats' },
+const careClubs = [
+  { name: 'Preventative Care', description: 'Regular check-ups and preventative treatments' },
+  { name: 'Arthritis Care', description: 'Ongoing support for pets with arthritis' },
+  { name: 'Feline Renal Care', description: 'Specialised care for cats with kidney conditions' },
+  { name: 'Feline Hyperthyroid Care', description: 'Management for hyperthyroid cats' },
 ]
 
 const pricingItems = [
@@ -98,7 +98,7 @@ export default function Pricing() {
             </div>
           </motion.div>
 
-          {/* Pet Health Clubs */}
+          {/* Heart@Home Care Club */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -109,15 +109,15 @@ export default function Pricing() {
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
                 <Heart className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold">Pet Health Clubs</h3>
+              <h3 className="text-2xl font-bold">Heart@Home Care Club</h3>
             </div>
 
             <p className="text-white/90 mb-8 text-lg">
-              Join one of our health clubs for ongoing care and savings on regular treatments.
+              Join our care club for ongoing support and savings on regular treatments.
             </p>
 
             <div className="space-y-4 mb-8">
-              {healthClubs.map((club, index) => (
+              {careClubs.map((club, index) => (
                 <motion.div
                   key={club.name}
                   initial={{ opacity: 0, y: 10 }}

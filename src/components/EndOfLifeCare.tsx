@@ -107,7 +107,7 @@ export default function EndOfLifeCare() {
                 rel="noopener noreferrer"
                 className="font-semibold text-primary hover:text-primary-dark underline underline-offset-2 transition-colors"
               >
-                Holywell Pet Crematorium
+                Holywell Pet Funeral Services
               </a>{' '}
               provides our aftercare services.
             </p>
