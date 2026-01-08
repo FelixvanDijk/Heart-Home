@@ -126,14 +126,14 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
       return
     }
 
-    // Timeline
+    // Timeline - slowed down for smoother animal walk-in
     const timers = [
-      setTimeout(() => setPhase('animals'), 800),      // House draws, then animals start
-      setTimeout(() => setPhase('gathered'), 2800),    // Animals arrive
-      setTimeout(() => setPhase('heart'), 3300),       // Heart appears
-      setTimeout(() => setPhase('logo'), 4000),        // Logo appears
-      setTimeout(() => setPhase('done'), 5200),        // Start fade
-      setTimeout(() => onComplete(), 5800),            // Complete
+      setTimeout(() => setPhase('animals'), 1000),     // House draws, then animals start
+      setTimeout(() => setPhase('gathered'), 4000),    // Animals arrive (slower walk-in)
+      setTimeout(() => setPhase('heart'), 4600),       // Heart appears
+      setTimeout(() => setPhase('logo'), 5400),        // Logo appears
+      setTimeout(() => setPhase('done'), 6800),        // Start fade
+      setTimeout(() => onComplete(), 7500),            // Complete
     ]
 
     return () => timers.forEach(clearTimeout)
@@ -198,9 +198,9 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
                   }}
                   transition={{
                     type: "spring",
-                    stiffness: 80,
-                    damping: 15,
-                    delay: animal.delay,
+                    stiffness: 40,
+                    damping: 12,
+                    delay: animal.delay * 1.5,
                   }}
                 >
                   <img 

@@ -261,82 +261,156 @@ export default function Hero() {
                 />
               </div>
               
-              {/* Floating elements around logo */}
-              <motion.div
-                animate={{ 
-                  y: [-10, 10, -10],
-                  rotate: [0, 5, 0, -5, 0]
-                }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-4 right-8 sm:top-8 sm:right-12 text-4xl sm:text-5xl drop-shadow-lg"
-              >
-                🐾
-              </motion.div>
-              <motion.div
-                animate={{ 
-                  y: [-8, 8, -8],
-                  x: [-3, 3, -3],
-                  rotate: [-5, 5, -5]
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-12 left-1/3 sm:-top-8 text-3xl sm:text-4xl drop-shadow-lg"
-              >
-                🦜
-              </motion.div>
-              <motion.div
-                animate={{ 
-                  y: [10, -10, 10],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-8 left-4 sm:bottom-12 sm:left-8 text-3xl sm:text-4xl drop-shadow-lg"
-              >
-                ❤️
-              </motion.div>
-              <motion.div
-                animate={{ 
-                  x: [-5, 5, -5],
-                  y: [-3, 3, -3]
-                }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/4 left-0 text-3xl drop-shadow-lg"
-              >
-                🐕
-              </motion.div>
-              <motion.div
-                animate={{ 
-                  x: [5, -5, 5],
-                  y: [3, -3, 3]
-                }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-1/4 right-0 text-3xl drop-shadow-lg"
-              >
-                🐈
-              </motion.div>
-              {/* Animated turtle with head popping in/out */}
-              <motion.div
-                animate={{ 
-                  x: [-3, 3, -3],
-                }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-12 left-1/2 -translate-x-1/2 sm:-bottom-8 text-4xl sm:text-5xl drop-shadow-lg"
-              >
+              {/* Paw print trails - as if animals walked to the logo */}
+              {/* Trail from top-left */}
+              {[
+                { x: -95, y: -75, rotate: -30, delay: 0, opacity: 0.15 },
+                { x: -75, y: -60, rotate: -25, delay: 0.1, opacity: 0.2 },
+                { x: -55, y: -45, rotate: -20, delay: 0.2, opacity: 0.25 },
+              ].map((paw, i) => (
                 <motion.span
-                  className="inline-block"
-                  animate={{
-                    scaleX: [1, 1.1, 1, 0.95, 1],
-                    scaleY: [1, 0.9, 1, 1.05, 1],
+                  key={`trail-tl-${i}`}
+                  className="absolute text-lg sm:text-xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#59A5AE',
+                    opacity: paw.opacity
                   }}
-                  transition={{ 
-                    duration: 2.5, 
-                    repeat: Infinity, 
-                    ease: "easeInOut",
-                    times: [0, 0.3, 0.5, 0.7, 1]
-                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: paw.opacity, scale: 1, rotate: paw.rotate }}
+                  transition={{ delay: 0.5 + paw.delay, duration: 0.4 }}
                 >
-                  🐢
+                  🐾
                 </motion.span>
-              </motion.div>
+              ))}
+              
+              {/* Trail from top-right */}
+              {[
+                { x: 95, y: -70, rotate: 35, delay: 0, opacity: 0.15 },
+                { x: 75, y: -55, rotate: 30, delay: 0.1, opacity: 0.2 },
+                { x: 55, y: -40, rotate: 25, delay: 0.2, opacity: 0.25 },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`trail-tr-${i}`}
+                  className="absolute text-lg sm:text-xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#59A5AE',
+                    opacity: paw.opacity
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: paw.opacity, scale: 1, rotate: paw.rotate }}
+                  transition={{ delay: 0.6 + paw.delay, duration: 0.4 }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Trail from left */}
+              {[
+                { x: -105, y: 10, rotate: -10, delay: 0, opacity: 0.15 },
+                { x: -85, y: 5, rotate: -5, delay: 0.1, opacity: 0.2 },
+                { x: -65, y: 0, rotate: 0, delay: 0.2, opacity: 0.25 },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`trail-l-${i}`}
+                  className="absolute text-lg sm:text-xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#D7AF6E',
+                    opacity: paw.opacity
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: paw.opacity, scale: 1, rotate: paw.rotate }}
+                  transition={{ delay: 0.7 + paw.delay, duration: 0.4 }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Trail from right */}
+              {[
+                { x: 105, y: 5, rotate: 10, delay: 0, opacity: 0.15 },
+                { x: 85, y: 0, rotate: 5, delay: 0.1, opacity: 0.2 },
+                { x: 65, y: -5, rotate: 0, delay: 0.2, opacity: 0.25 },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`trail-r-${i}`}
+                  className="absolute text-lg sm:text-xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#D7AF6E',
+                    opacity: paw.opacity
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: paw.opacity, scale: 1, rotate: paw.rotate }}
+                  transition={{ delay: 0.8 + paw.delay, duration: 0.4 }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Trail from bottom-left */}
+              {[
+                { x: -90, y: 80, rotate: -40, delay: 0, opacity: 0.15 },
+                { x: -70, y: 65, rotate: -35, delay: 0.1, opacity: 0.2 },
+                { x: -50, y: 50, rotate: -30, delay: 0.2, opacity: 0.25 },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`trail-bl-${i}`}
+                  className="absolute text-lg sm:text-xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#38524B',
+                    opacity: paw.opacity
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: paw.opacity, scale: 1, rotate: paw.rotate }}
+                  transition={{ delay: 0.9 + paw.delay, duration: 0.4 }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Trail from bottom-right */}
+              {[
+                { x: 90, y: 75, rotate: 40, delay: 0, opacity: 0.15 },
+                { x: 70, y: 60, rotate: 35, delay: 0.1, opacity: 0.2 },
+                { x: 50, y: 45, rotate: 30, delay: 0.2, opacity: 0.25 },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`trail-br-${i}`}
+                  className="absolute text-lg sm:text-xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#38524B',
+                    opacity: paw.opacity
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: paw.opacity, scale: 1, rotate: paw.rotate }}
+                  transition={{ delay: 1.0 + paw.delay, duration: 0.4 }}
+                >
+                  🐾
+                </motion.span>
+              ))}
 
               {/* Logo container with premium styling */}
               <motion.div
