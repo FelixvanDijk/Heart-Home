@@ -319,7 +319,7 @@ export default function Hero() {
                   x: [-3, 3, -3],
                 }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:bottom-0 text-4xl sm:text-5xl drop-shadow-lg"
+                className="absolute -bottom-12 left-1/2 -translate-x-1/2 sm:-bottom-8 text-4xl sm:text-5xl drop-shadow-lg"
               >
                 <motion.span
                   className="inline-block"
