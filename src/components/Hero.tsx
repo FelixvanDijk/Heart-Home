@@ -261,6 +261,228 @@ export default function Hero() {
                 />
               </div>
               
+              {/* Animated paw prints walking in from each direction */}
+              {/* Top-left trail */}
+              {[
+                { x: -160, y: -130, rotate: -45, step: 0 },
+                { x: -130, y: -105, rotate: -40, step: 1 },
+                { x: -100, y: -80, rotate: -35, step: 2 },
+                { x: -70, y: -55, rotate: -30, step: 3, final: true },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`paw-tl-${i}`}
+                  className="absolute text-xl sm:text-2xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#59A5AE',
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={paw.final ? {
+                    opacity: [0, 0, 0.4, 0.4],
+                    scale: [0, 0, 1, 1],
+                    rotate: paw.rotate,
+                  } : {
+                    opacity: [0, 0.5, 0.5, 0],
+                    scale: [0, 1, 1, 0],
+                    rotate: paw.rotate,
+                  }}
+                  transition={{ 
+                    delay: 0.3 + paw.step * 0.4,
+                    duration: paw.final ? 1.6 : 1.2,
+                    ease: "easeOut",
+                  }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Top-right trail */}
+              {[
+                { x: 160, y: -125, rotate: 45, step: 0 },
+                { x: 130, y: -100, rotate: 40, step: 1 },
+                { x: 100, y: -75, rotate: 35, step: 2 },
+                { x: 70, y: -50, rotate: 30, step: 3, final: true },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`paw-tr-${i}`}
+                  className="absolute text-xl sm:text-2xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#59A5AE',
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={paw.final ? {
+                    opacity: [0, 0, 0.4, 0.4],
+                    scale: [0, 0, 1, 1],
+                    rotate: paw.rotate,
+                  } : {
+                    opacity: [0, 0.5, 0.5, 0],
+                    scale: [0, 1, 1, 0],
+                    rotate: paw.rotate,
+                  }}
+                  transition={{ 
+                    delay: 0.5 + paw.step * 0.4,
+                    duration: paw.final ? 1.6 : 1.2,
+                    ease: "easeOut",
+                  }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Left trail */}
+              {[
+                { x: -180, y: 0, rotate: -10, step: 0 },
+                { x: -150, y: -5, rotate: -8, step: 1 },
+                { x: -120, y: 0, rotate: -5, step: 2 },
+                { x: -90, y: 5, rotate: 0, step: 3, final: true },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`paw-l-${i}`}
+                  className="absolute text-xl sm:text-2xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#D7AF6E',
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={paw.final ? {
+                    opacity: [0, 0, 0.4, 0.4],
+                    scale: [0, 0, 1, 1],
+                    rotate: paw.rotate,
+                  } : {
+                    opacity: [0, 0.5, 0.5, 0],
+                    scale: [0, 1, 1, 0],
+                    rotate: paw.rotate,
+                  }}
+                  transition={{ 
+                    delay: 0.7 + paw.step * 0.4,
+                    duration: paw.final ? 1.6 : 1.2,
+                    ease: "easeOut",
+                  }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Right trail */}
+              {[
+                { x: 180, y: 5, rotate: 10, step: 0 },
+                { x: 150, y: 0, rotate: 8, step: 1 },
+                { x: 120, y: -5, rotate: 5, step: 2 },
+                { x: 90, y: 0, rotate: 0, step: 3, final: true },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`paw-r-${i}`}
+                  className="absolute text-xl sm:text-2xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#D7AF6E',
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={paw.final ? {
+                    opacity: [0, 0, 0.4, 0.4],
+                    scale: [0, 0, 1, 1],
+                    rotate: paw.rotate,
+                  } : {
+                    opacity: [0, 0.5, 0.5, 0],
+                    scale: [0, 1, 1, 0],
+                    rotate: paw.rotate,
+                  }}
+                  transition={{ 
+                    delay: 0.9 + paw.step * 0.4,
+                    duration: paw.final ? 1.6 : 1.2,
+                    ease: "easeOut",
+                  }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Bottom-left trail */}
+              {[
+                { x: -155, y: 130, rotate: -135, step: 0 },
+                { x: -125, y: 105, rotate: -130, step: 1 },
+                { x: -95, y: 80, rotate: -125, step: 2 },
+                { x: -65, y: 55, rotate: -120, step: 3, final: true },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`paw-bl-${i}`}
+                  className="absolute text-xl sm:text-2xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#38524B',
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={paw.final ? {
+                    opacity: [0, 0, 0.4, 0.4],
+                    scale: [0, 0, 1, 1],
+                    rotate: paw.rotate,
+                  } : {
+                    opacity: [0, 0.5, 0.5, 0],
+                    scale: [0, 1, 1, 0],
+                    rotate: paw.rotate,
+                  }}
+                  transition={{ 
+                    delay: 1.1 + paw.step * 0.4,
+                    duration: paw.final ? 1.6 : 1.2,
+                    ease: "easeOut",
+                  }}
+                >
+                  🐾
+                </motion.span>
+              ))}
+              
+              {/* Bottom-right trail */}
+              {[
+                { x: 155, y: 125, rotate: 135, step: 0 },
+                { x: 125, y: 100, rotate: 130, step: 1 },
+                { x: 95, y: 75, rotate: 125, step: 2 },
+                { x: 65, y: 50, rotate: 120, step: 3, final: true },
+              ].map((paw, i) => (
+                <motion.span
+                  key={`paw-br-${i}`}
+                  className="absolute text-xl sm:text-2xl"
+                  style={{ 
+                    left: '50%', 
+                    top: '50%', 
+                    marginLeft: paw.x, 
+                    marginTop: paw.y,
+                    color: '#38524B',
+                  }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={paw.final ? {
+                    opacity: [0, 0, 0.4, 0.4],
+                    scale: [0, 0, 1, 1],
+                    rotate: paw.rotate,
+                  } : {
+                    opacity: [0, 0.5, 0.5, 0],
+                    scale: [0, 1, 1, 0],
+                    rotate: paw.rotate,
+                  }}
+                  transition={{ 
+                    delay: 1.3 + paw.step * 0.4,
+                    duration: paw.final ? 1.6 : 1.2,
+                    ease: "easeOut",
+                  }}
+                >
+                  🐾
+                </motion.span>
+              ))}
 
               {/* Logo container with premium styling */}
               <motion.div
