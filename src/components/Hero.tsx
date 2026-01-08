@@ -260,6 +260,48 @@ export default function Hero() {
                   transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
                 />
               </div>
+              
+              {/* Floating paw prints around the logo */}
+              <motion.span
+                animate={{ y: [-5, 5, -5], rotate: [-5, 5, -5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-8 right-4 sm:top-0 sm:right-8 text-2xl sm:text-3xl opacity-40"
+                style={{ color: '#59A5AE' }}
+              >
+                🐾
+              </motion.span>
+              <motion.span
+                animate={{ y: [5, -5, 5], rotate: [5, -5, 5] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/4 -left-6 sm:left-0 text-2xl sm:text-3xl opacity-40"
+                style={{ color: '#D7AF6E' }}
+              >
+                🐾
+              </motion.span>
+              <motion.span
+                animate={{ y: [-4, 4, -4], rotate: [3, -3, 3] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/4 -right-6 sm:right-0 text-2xl sm:text-3xl opacity-40"
+                style={{ color: '#D7AF6E' }}
+              >
+                🐾
+              </motion.span>
+              <motion.span
+                animate={{ y: [4, -4, 4], rotate: [-4, 4, -4] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-1/4 -left-4 sm:left-2 text-2xl sm:text-3xl opacity-40"
+                style={{ color: '#38524B' }}
+              >
+                🐾
+              </motion.span>
+              <motion.span
+                animate={{ y: [-6, 6, -6], rotate: [6, -6, 6] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-1/4 -right-4 sm:right-2 text-2xl sm:text-3xl opacity-40"
+                style={{ color: '#38524B' }}
+              >
+                🐾
+              </motion.span>
 
               {/* Logo container with premium styling */}
               <motion.div
