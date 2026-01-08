@@ -25,6 +25,7 @@ function Avatar({ member, size = 'md' }: { member: TeamMember; size?: 'sm' | 'md
           src={member.photo} 
           alt={member.name}
           className="w-full h-full object-cover"
+          style={{ objectPosition: member.photoPosition || 'center' }}
         />
       </div>
     )
