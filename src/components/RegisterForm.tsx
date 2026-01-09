@@ -126,6 +126,10 @@ Other Services Requested: ${formData.otherServices || 'None'}
 
       if (response.ok) {
         setSubmitStatus('success')
+        // Scroll to the register section to show the thank you message
+        setTimeout(() => {
+          document.getElementById('register')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
       } else {
         setSubmitStatus('error')
       }
