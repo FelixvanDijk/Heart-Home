@@ -352,8 +352,15 @@ function ServiceCard({
           </div>
 
           {/* Title */}
-          <h3 className={`${featured ? 'text-2xl md:text-3xl' : 'text-xl'} font-bold text-text mb-3 group-hover:text-primary transition-colors duration-300`}>
-            {service.title}
+          <h3 
+            className={`${featured ? 'text-2xl md:text-3xl' : 'text-xl'} font-bold text-text mb-3 group-hover:text-accent transition-colors duration-300`}
+            style={{ 
+              textShadow: 'none',
+            }}
+          >
+            <span className="group-hover:[text-shadow:_-1px_-1px_0_#fff,_1px_-1px_0_#fff,_-1px_1px_0_#fff,_1px_1px_0_#fff,_0_0_8px_rgba(255,255,255,0.8)]">
+              {service.title}
+            </span>
           </h3>
 
           {/* Description */}
