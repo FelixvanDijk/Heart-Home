@@ -80,8 +80,8 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                 </p>
                 <p className="text-text-muted mb-6">
                   <strong>Email:</strong>{' '}
-                  <a href="mailto:info@heartathomevets.com" className="text-primary hover:underline">
-                    info@heartathomevets.com
+                  <a href="mailto:hello@heartathomevets.com" className="text-primary hover:underline">
+                    hello@heartathomevets.com
                   </a>
                 </p>
                 <p className="text-text-muted mb-6">
@@ -199,8 +199,8 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                 </p>
                 <p className="text-text-muted">
                   Email:{' '}
-                  <a href="mailto:info@heartathomevets.com" className="text-primary hover:underline">
-                    info@heartathomevets.com
+                  <a href="mailto:hello@heartathomevets.com" className="text-primary hover:underline">
+                    hello@heartathomevets.com
                   </a>
                 </p>
               </div>

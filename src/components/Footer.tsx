@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:info@heartathomevets.com"
+                href="mailto:hello@heartathomevets.com"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-semibold text-lg rounded-xl hover:bg-white/90 transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -70,11 +70,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@heartathomevets.com"
+                  href="mailto:hello@heartathomevets.com"
                   className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  info@heartathomevets.com
+                  hello@heartathomevets.com
                 </a>
               </li>
               <li>

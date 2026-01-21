@@ -352,8 +352,8 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 <p className="text-text-muted mb-2">Phone: Coming soon</p>
                 <p className="text-text-muted">
                   Email:{' '}
-                  <a href="mailto:info@heartathomevets.com" className="text-primary hover:underline">
-                    info@heartathomevets.com
+                  <a href="mailto:hello@heartathomevets.com" className="text-primary hover:underline">
+                    hello@heartathomevets.com
                   </a>
                 </p>
               </div>
