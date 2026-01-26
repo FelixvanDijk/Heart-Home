@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, PawPrint } from 'lucide-react'
 import logoImg from '/assets/logo.png'
+
+// LupaPets pre-registration link
+const REGISTRATION_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
 
 const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
@@ -87,12 +90,15 @@ export default function Header() {
             ))}
           </ul>
 
-          {/* CTA Button (Desktop) */}
+          {/* CTA Button (Desktop) - Links to LupaPets registration */}
           <a
-            href="#register"
-            className="hidden lg:inline-flex btn-primary text-base px-5 py-2.5 min-h-0"
+            href={REGISTRATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-flex items-center gap-2 btn-accent text-base px-5 py-2.5 min-h-0 animate-pulse-badge"
           >
-            Book a Home Visit
+            <PawPrint className="w-4 h-4" />
+            Register Your Pet
           </a>
 
           {/* Mobile Menu Button */}
@@ -131,11 +137,14 @@ export default function Header() {
             ))}
             <li className="pt-2">
               <a
-                href="#register"
-                className="btn-primary w-full text-base"
+                href={REGISTRATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-accent w-full text-base flex items-center justify-center gap-2"
                 onClick={handleNavClick}
               >
-                Book a Home Visit
+                <PawPrint className="w-4 h-4" />
+                Register Your Pet
               </a>
             </li>
           </ul>

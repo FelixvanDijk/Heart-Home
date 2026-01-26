@@ -19,6 +19,7 @@ import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import IntroAnimation from './components/IntroAnimation'
 import SmoothScroll from './components/SmoothScroll'
+import FloatingRegisterButton from './components/FloatingRegisterButton'
 
 function App() {
   const [introComplete, setIntroComplete] = useState(false)
@@ -35,6 +36,7 @@ function App() {
         
         <ScrollProgress />
         <Header />
+        <FloatingRegisterButton />
         <main>
           <Hero />
           <Introduction />

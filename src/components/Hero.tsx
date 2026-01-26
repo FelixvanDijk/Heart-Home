@@ -2,11 +2,14 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Sparkles, Heart, MapPin, Clock, Shield } from 'lucide-react'
+import { Sparkles, Heart, MapPin, Clock, Shield, PawPrint } from 'lucide-react'
 import { CyclingTextScramble } from './ui/TextScramble'
 import { MagneticButton } from './ui/MagneticButton'
 import { AnimatedGradient } from './ui/AnimatedGradient'
 import logoImg from '/assets/logo.png'
+
+// LupaPets pre-registration link
+const REGISTRATION_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -198,18 +201,43 @@ export default function Hero() {
                 </span>
               </motion.p>
 
-              {/* CTA Buttons with Magnetic Effect */}
+              {/* Primary Registration CTA - Prominent and unmissable */}
+              <motion.div
+                className="mb-6"
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.9, duration: 0.6, type: 'spring' }}
+              >
+                <a
+                  href={REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-accent via-accent to-[#E8825A] text-white font-bold text-xl rounded-2xl shadow-xl shadow-accent/30 hover:shadow-2xl hover:shadow-accent/40 transition-all duration-300 overflow-hidden transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  {/* Animated shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
+                  
+                  {/* Pulsing ring effect */}
+                  <div className="absolute inset-0 rounded-2xl animate-pulse-badge" />
+                  
+                  <PawPrint className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+                  <span className="relative z-10">Register Your Pet Now</span>
+                  <Heart className="w-5 h-5 relative z-10 group-hover:scale-125 transition-transform duration-300 fill-white/30" />
+                </a>
+              </motion.div>
+
+              {/* Secondary CTA Buttons */}
               <motion.div 
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.6 }}
+                transition={{ delay: 1.1, duration: 0.6 }}
               >
                 <MagneticButton
-                  href="#register"
+                  href="#services"
                   className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 overflow-hidden"
                 >
-                  <span className="relative z-10">Book a Home Visit</span>
+                  <span className="relative z-10">Our Services</span>
                   <Heart className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform" />
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </MagneticButton>
