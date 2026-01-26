@@ -177,7 +177,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
               >
-                <span className="text-text-muted text-lg mr-2">Currently viewing:</span>
+                <span className="text-text-muted text-lg mr-2">Services:</span>
                 <CyclingTextScramble
                   texts={serviceTaglines}
                   interval={3500}

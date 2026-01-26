@@ -101,26 +101,40 @@ export default function Header() {
             Register Your Pet
           </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="lg:hidden p-2 -mr-2 text-text hover:text-primary transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-expanded={isMobileMenuOpen}
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-7 h-7" />
-            ) : (
-              <Menu className="w-7 h-7" />
-            )}
-          </button>
+          {/* Mobile: Register Button + Menu Button */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile Register Button - Always visible */}
+            <a
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-accent to-[#E8825A] text-white font-semibold text-sm rounded-lg shadow-lg shadow-accent/25 animate-pulse-badge"
+            >
+              <PawPrint className="w-4 h-4" />
+              <span>Register</span>
+            </a>
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              className="p-2 -mr-2 text-text hover:text-primary transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-7 h-7" />
+              ) : (
+                <Menu className="w-7 h-7" />
+              )}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
-            isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+            isMobileMenuOpen ? 'max-h-[32rem] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
         >
           <ul className="flex flex-col gap-2 pb-4">
