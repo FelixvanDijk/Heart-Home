@@ -369,11 +369,7 @@ function ServiceCard({
           </p>
 
           {/* Bottom section */}
-          <div className="mt-4 pt-4 border-t border-gray-100 group-hover:border-primary/20 flex items-center justify-between transition-colors duration-300">
-            <span className="inline-flex items-center text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full group-hover:bg-accent group-hover:text-white transition-all duration-300">
-              Coming soon
-            </span>
-            
+          <div className="mt-4 pt-4 border-t border-gray-100 group-hover:border-primary/20 flex items-center justify-end transition-colors duration-300">
             {/* Arrow that appears on hover */}
             <motion.div 
               className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-primary transition-all duration-300"

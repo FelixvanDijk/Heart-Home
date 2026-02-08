@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { PawPrint, X } from 'lucide-react'
+import { PawPrint, X, Calendar } from 'lucide-react'
 
-// LupaPets pre-registration link
-const REGISTRATION_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
+// LupaPets booking/registration link
+const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
 
 export default function FloatingRegisterButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -40,14 +40,29 @@ export default function FloatingRegisterButton() {
             transition={{ delay: 0.3 }}
             onClick={() => setIsDismissed(true)}
             className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 text-text-muted hover:text-text hover:bg-white transition-colors"
-            aria-label="Dismiss registration button"
+            aria-label="Dismiss buttons"
           >
             <X className="w-4 h-4" />
           </motion.button>
 
-          {/* Main floating button */}
+          {/* Book Now floating button */}
           <a
-            href={REGISTRATION_URL}
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-primary to-deep text-white font-bold text-base rounded-full shadow-2xl shadow-primary/40 hover:shadow-primary/50 transition-all duration-300 overflow-hidden transform hover:scale-105 active:scale-95"
+          >
+            {/* Shimmer effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
+            
+            <Calendar className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
+            <span className="relative z-10 hidden sm:inline">Book Now</span>
+            <span className="relative z-10 sm:hidden">Book</span>
+          </a>
+
+          {/* Register floating button */}
+          <a
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-accent to-[#E8825A] text-white font-bold text-base rounded-full shadow-2xl shadow-accent/40 hover:shadow-accent/50 transition-all duration-300 overflow-hidden transform hover:scale-105 active:scale-95"

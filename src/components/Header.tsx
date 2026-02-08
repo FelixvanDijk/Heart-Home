@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, PawPrint } from 'lucide-react'
+import { Menu, X, PawPrint, Calendar } from 'lucide-react'
 import logoImg from '/assets/logo.png'
 
-// LupaPets pre-registration link
-const REGISTRATION_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
+// LupaPets booking/registration link
+const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
 
 const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
@@ -90,22 +90,44 @@ export default function Header() {
             ))}
           </ul>
 
-          {/* CTA Button (Desktop) - Links to LupaPets registration */}
-          <a
-            href={REGISTRATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center gap-2 btn-accent text-base px-5 py-2.5 min-h-0 animate-pulse-badge"
-          >
-            <PawPrint className="w-4 h-4" />
-            Register Your Pet
-          </a>
+          {/* CTA Buttons (Desktop) - Links to LupaPets */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 btn-primary text-base px-5 py-2.5 min-h-0"
+            >
+              <Calendar className="w-4 h-4" />
+              Book Now
+            </a>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 btn-accent text-base px-5 py-2.5 min-h-0 animate-pulse-badge"
+            >
+              <PawPrint className="w-4 h-4" />
+              Register Your Pet
+            </a>
+          </div>
 
-          {/* Mobile: Register Button + Menu Button */}
+          {/* Mobile: Book Now + Register Button + Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile Book Now Button - Always visible */}
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-primary to-deep text-white font-semibold text-sm rounded-lg shadow-lg shadow-primary/25"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Book</span>
+            </a>
+
             {/* Mobile Register Button - Always visible */}
             <a
-              href={REGISTRATION_URL}
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-accent to-[#E8825A] text-white font-semibold text-sm rounded-lg shadow-lg shadow-accent/25 animate-pulse-badge"
@@ -149,9 +171,19 @@ export default function Header() {
                 </a>
               </li>
             ))}
-            <li className="pt-2">
+            <li className="pt-2 flex flex-col gap-2">
               <a
-                href={REGISTRATION_URL}
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full text-base flex items-center justify-center gap-2"
+                onClick={handleNavClick}
+              >
+                <Calendar className="w-4 h-4" />
+                Book Now
+              </a>
+              <a
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-accent w-full text-base flex items-center justify-center gap-2"
