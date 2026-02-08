@@ -50,14 +50,11 @@ export default function FloatingRegisterButton() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-primary to-deep text-white font-bold text-base rounded-full shadow-2xl shadow-primary/40 hover:shadow-primary/50 transition-all duration-300 overflow-hidden transform hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 px-4 py-2.5 bg-primary hover:bg-deep text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
           >
-            {/* Shimmer effect */}
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
-            
-            <Calendar className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
-            <span className="relative z-10 hidden sm:inline">Book Now</span>
-            <span className="relative z-10 sm:hidden">Book</span>
+            <Calendar className="w-4 h-4" />
+            <span className="hidden sm:inline">Book Now</span>
+            <span className="sm:hidden">Book</span>
           </a>
 
           {/* Register floating button */}
@@ -65,17 +62,11 @@ export default function FloatingRegisterButton() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-accent to-[#E8825A] text-white font-bold text-base rounded-full shadow-2xl shadow-accent/40 hover:shadow-accent/50 transition-all duration-300 overflow-hidden transform hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 px-4 py-2.5 bg-accent hover:bg-[#D47B4A] text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
           >
-            {/* Pulsing ring */}
-            <span className="absolute inset-0 rounded-full animate-pulse-badge" />
-            
-            {/* Shimmer effect */}
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
-            
-            <PawPrint className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
-            <span className="relative z-10 hidden sm:inline">Register Your Pet</span>
-            <span className="relative z-10 sm:hidden">Register</span>
+            <PawPrint className="w-4 h-4" />
+            <span className="hidden sm:inline">Register</span>
+            <span className="sm:hidden">Register</span>
           </a>
         </motion.div>
       )}

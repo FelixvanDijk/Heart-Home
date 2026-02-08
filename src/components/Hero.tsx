@@ -203,7 +203,7 @@ export default function Hero() {
 
               {/* Primary CTAs - Book Now and Register Your Pet */}
               <motion.div
-                className="mb-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                className="mb-6 flex flex-wrap gap-3 justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.9, duration: 0.6, type: 'spring' }}
@@ -213,13 +213,10 @@ export default function Hero() {
                   href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-primary via-primary to-deep text-white font-bold text-xl rounded-2xl shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 overflow-hidden transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-deep text-white font-semibold text-base rounded-full shadow-lg shadow-primary/25 hover:shadow-xl transition-all duration-300"
                 >
-                  {/* Animated shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
-                  
-                  <Calendar className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="relative z-10">Book Now</span>
+                  <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span>Book Now</span>
                 </a>
 
                 {/* Register Your Pet Button */}
@@ -227,17 +224,10 @@ export default function Hero() {
                   href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-accent via-accent to-[#E8825A] text-white font-bold text-xl rounded-2xl shadow-xl shadow-accent/30 hover:shadow-2xl hover:shadow-accent/40 transition-all duration-300 overflow-hidden transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent hover:bg-[#D47B4A] text-white font-semibold text-base rounded-full shadow-lg shadow-accent/25 hover:shadow-xl transition-all duration-300"
                 >
-                  {/* Animated shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
-                  
-                  {/* Pulsing ring effect */}
-                  <div className="absolute inset-0 rounded-2xl animate-pulse-badge" />
-                  
-                  <PawPrint className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="relative z-10">Register Your Pet</span>
-                  <Heart className="w-5 h-5 relative z-10 group-hover:scale-125 transition-transform duration-300 fill-white/30" />
+                  <PawPrint className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span>Register Your Pet</span>
                 </a>
               </motion.div>
 

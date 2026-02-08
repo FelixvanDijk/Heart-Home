@@ -91,37 +91,37 @@ export default function Header() {
           </ul>
 
           {/* CTA Buttons (Desktop) - Links to LupaPets */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2">
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 btn-primary text-base px-5 py-2.5 min-h-0"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-3.5 h-3.5" />
               Book Now
             </a>
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 btn-accent text-base px-5 py-2.5 min-h-0 animate-pulse-badge"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent hover:bg-accent/90 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200"
             >
-              <PawPrint className="w-4 h-4" />
-              Register Your Pet
+              <PawPrint className="w-3.5 h-3.5" />
+              Register
             </a>
           </div>
 
           {/* Mobile: Book Now + Register Button + Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-1.5 lg:hidden">
             {/* Mobile Book Now Button - Always visible */}
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-primary to-deep text-white font-semibold text-sm rounded-lg shadow-lg shadow-primary/25"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 bg-primary hover:bg-primary/90 text-white font-semibold text-xs rounded-full shadow-md transition-all"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-3 h-3" />
               <span>Book</span>
             </a>
 
@@ -130,9 +130,9 @@ export default function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-accent to-[#E8825A] text-white font-semibold text-sm rounded-lg shadow-lg shadow-accent/25 animate-pulse-badge"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 bg-accent hover:bg-accent/90 text-white font-semibold text-xs rounded-full shadow-md transition-all"
             >
-              <PawPrint className="w-4 h-4" />
+              <PawPrint className="w-3 h-3" />
               <span>Register</span>
             </a>
 
@@ -171,12 +171,12 @@ export default function Header() {
                 </a>
               </li>
             ))}
-            <li className="pt-2 flex flex-col gap-2">
+            <li className="pt-3 flex gap-3">
               <a
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary w-full text-base flex items-center justify-center gap-2"
+                className="flex-1 py-3 bg-primary hover:bg-primary/90 text-white text-base font-semibold rounded-xl flex items-center justify-center gap-2 shadow-md transition-all"
                 onClick={handleNavClick}
               >
                 <Calendar className="w-4 h-4" />
@@ -186,11 +186,11 @@ export default function Header() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-accent w-full text-base flex items-center justify-center gap-2"
+                className="flex-1 py-3 bg-accent hover:bg-accent/90 text-white text-base font-semibold rounded-xl flex items-center justify-center gap-2 shadow-md transition-all"
                 onClick={handleNavClick}
               >
                 <PawPrint className="w-4 h-4" />
-                Register Your Pet
+                Register
               </a>
             </li>
           </ul>
