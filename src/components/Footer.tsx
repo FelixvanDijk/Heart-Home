@@ -56,12 +56,9 @@ export default function Footer() {
                 className="h-16 w-auto bg-white rounded-lg p-1"
               />
             </div>
-            <p className="text-white/80 text-lg mb-4">
+            <p className="text-white/80 text-lg">
               Mobile Vet Home Visits
             </p>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 text-accent font-semibold rounded-full">
-              Coming Soon!
-            </span>
           </div>
 
           {/* Contact */}
@@ -79,12 +76,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+441onal"
+                  href="tel:+447942146677"
                   className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
                 >
                   <Phone className="w-5 h-5" />
-                  {/* PLACEHOLDER: Update with real phone */}
-                  Coming soon
+                  07942 146677
                 </a>
               </li>
             </ul>
