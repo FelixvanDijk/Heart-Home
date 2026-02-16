@@ -19,6 +19,11 @@ export interface Service {
   title: string
   description: string
   category: string
+  pricing?: {
+    zone1: string
+    zone2Extra: string
+    zone3Extra: string
+  }
 }
 
 export const services: Service[] = [
@@ -33,9 +38,14 @@ export const services: Service[] = [
   {
     id: 'sick-pet',
     icon: HeartPulse,
-    title: 'Sick Pet Consultations',
-    description: 'Calm assessment for dogs, cats, rabbits, small mammals, reptiles, and birds.',
+    title: 'Vet Visit',
+    description: 'Vet visit, including consultation for dogs, cats, rabbits, small mammals, reptiles, and birds.',
     category: 'General Care',
+    pricing: {
+      zone1: '\u00A380',
+      zone2Extra: '+\u00A310',
+      zone3Extra: '+\u00A320',
+    },
   },
   {
     id: 'diagnostics',
@@ -54,9 +64,14 @@ export const services: Service[] = [
   {
     id: 'exotic',
     icon: Bird,
-    title: 'Exotic Pet Care',
-    description: 'Health checks, husbandry guidance, and welfare optimisation for reptiles, birds, and small mammals.',
+    title: 'Exotic Visit',
+    description: 'Exotic visit, including consultation, husbandry guidance, and welfare optimisation for reptiles, birds, and small mammals.',
     category: 'Specialist',
+    pricing: {
+      zone1: '\u00A380',
+      zone2Extra: '+\u00A310',
+      zone3Extra: '+\u00A320',
+    },
   },
   {
     id: 'pain-mobility',
@@ -68,9 +83,14 @@ export const services: Service[] = [
   {
     id: 'nurse-clinics',
     icon: Scissors,
-    title: 'Nurse Clinics',
-    description: 'Nail clipping, anal glands, ear care, weight clinics, dental checks, medication administration, and more.',
+    title: 'Nurse Visit',
+    description: 'Nurse visit for nail clipping, anal glands, ear care, weight clinics, dental checks, medication administration, and more.',
     category: 'Nursing',
+    pricing: {
+      zone1: '\u00A345',
+      zone2Extra: '+\u00A310',
+      zone3Extra: '+\u00A320',
+    },
   },
   {
     id: 'medications',
@@ -120,3 +140,4 @@ export const serviceCategories = [
   'Additional',
   'Convenience',
 ]
+

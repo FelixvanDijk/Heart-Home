@@ -368,6 +368,26 @@ function ServiceCard({
             {service.description}
           </p>
 
+          {/* Optional pricing strip for core visits */}
+          {service.pricing && (
+            <div className="mt-4 p-4 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-text-muted font-semibold mb-2">
+                Zone Pricing
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2.5 py-1 rounded-full bg-white/90 text-text text-sm font-semibold">
+                  Zone 1 {service.pricing.zone1}
+                </span>
+                <span className="px-2.5 py-1 rounded-full bg-white/90 text-text text-sm font-semibold">
+                  Zone 2 {service.pricing.zone2Extra}
+                </span>
+                <span className="px-2.5 py-1 rounded-full bg-white/90 text-text text-sm font-semibold">
+                  Zone 3 {service.pricing.zone3Extra}
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* Bottom section */}
           <div className="mt-4 pt-4 border-t border-gray-100 group-hover:border-primary/20 flex items-center justify-end transition-colors duration-300">
             {/* Arrow that appears on hover */}
@@ -507,4 +527,3 @@ export default function Services() {
     </section>
   )
 }
-

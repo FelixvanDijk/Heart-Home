@@ -27,7 +27,7 @@ export const team: TeamMember[] = [
     id: 'michele',
     name: 'Michele Jenkins',
     role: 'Registered Veterinary Nurse',
-    bio: 'With over 40 years of hands-on experience and a special passion for wildlife, reptiles, birds, and exotic pets, Michele brings warmth and expertise to every home visit. She holds additional qualifications across multiple species alongside her lifelong love of cats and dogs.\n\nMichele is excited to be part of this independent mobile service, bringing a more traditional, personal approach to veterinary care. By offering care in a pet\'s own home, she helps reduce stress and create a calmer experience for both pets and owners. She has a particular passion for supporting senior pets, helping families make practical changes that improve comfort, mobility, and quality of life as pets age.\n\nHaving lived and worked in the local area for over 20 years, Michele looks forward to becoming a familiar, friendly, and trusted face — building long-term relationships based on care, understanding, and respect.',
+    bio: 'With over 20 years of hands-on experience and a special passion for wildlife, reptiles, birds, and exotic pets, Michele brings warmth and expertise to every home visit. She holds additional qualifications across multiple species alongside her lifelong love of cats and dogs.\n\nMichele is excited to be part of this independent mobile service, bringing a more traditional, personal approach to veterinary care. By offering care in a pet\'s own home, she helps reduce stress and create a calmer experience for both pets and owners. She has a particular passion for supporting senior pets, helping families make practical changes that improve comfort, mobility, and quality of life as pets age.\n\nHaving lived and worked in the local area for over 20 years, Michele looks forward to becoming a familiar, friendly, and trusted face — building long-term relationships based on care, understanding, and respect.',
     initials: 'MJ',
     photo: michelePhoto,
     photoPosition: 'center 25%', // Show more of the image including her holding the gecko
@@ -43,3 +43,4 @@ export const team: TeamMember[] = [
   //   color: 'accent',
   // },
 ]
+

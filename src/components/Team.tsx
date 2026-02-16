@@ -284,10 +284,6 @@ export default function Team() {
           ))}
         </div>
 
-        {/* Note about placeholder photos */}
-        <p className="text-center text-text-muted mt-12 text-lg">
-          ✨ Team photos coming soon!
-        </p>
       </div>
 
       {/* Lightbox */}
@@ -304,3 +300,4 @@ export default function Team() {
     </section>
   )
 }
+
