@@ -149,12 +149,12 @@ export default function Pricing() {
                 <button
                   type="button"
                   onClick={() => setIsZoneMapOpen(true)}
-                  className="mt-3 w-full rounded-xl overflow-hidden border border-white/70 hover:border-primary/30 transition-colors"
+                  className="mt-3 w-full rounded-xl overflow-hidden border border-white/70 hover:border-primary/30 transition-colors bg-white"
                 >
                   <img
                     src={visitZonesMap}
                     alt="Preview of visit zones map"
-                    className="w-full h-36 object-cover object-top"
+                    className="w-full h-48 sm:h-56 object-contain"
                     loading="lazy"
                   />
                 </button>
@@ -218,7 +218,7 @@ export default function Pricing() {
             onClick={() => setIsZoneMapOpen(false)}
           >
             <motion.div
-              className="relative max-w-5xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/80"
+              className="relative max-w-5xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl border border-white/80 max-h-[92vh] flex flex-col"
               initial={{ opacity: 0, y: 24, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -240,17 +240,17 @@ export default function Pricing() {
                 </button>
               </div>
 
-              <div className="p-4 sm:p-6">
+              <div className="p-4 sm:p-6 overflow-y-auto">
                 <img
                   src={visitZonesMap}
                   alt="Heart At Home visit zone map showing Zone 1, Zone 2, and Zone 3 coverage areas."
-                  className="w-full h-auto rounded-2xl border border-gray-200"
+                  className="w-full h-auto max-h-[68vh] object-contain rounded-2xl border border-gray-200 bg-gray-50"
                 />
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">Zone 1 base fee</span>
-                  <span className="px-3 py-1 rounded-full bg-secondary/15 text-text text-sm font-semibold">Zone 2 +\u00A310</span>
-                  <span className="px-3 py-1 rounded-full bg-accent/15 text-text text-sm font-semibold">Zone 3 +\u00A320</span>
+                  <span className="px-3 py-1 rounded-full bg-secondary/15 text-text text-sm font-semibold">Zone 2 {'+\u00A310'}</span>
+                  <span className="px-3 py-1 rounded-full bg-accent/15 text-text text-sm font-semibold">Zone 3 {'+\u00A320'}</span>
                 </div>
               </div>
             </motion.div>
