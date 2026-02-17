@@ -10,7 +10,6 @@ import ServiceArea from './components/ServiceArea'
 import Pricing from './components/Pricing'
 import AboutUs from './components/AboutUs'
 import Testimonials from './components/Testimonials'
-import RegisterForm from './components/RegisterForm'
 import Team from './components/Team'
 import EndOfLifeCare from './components/EndOfLifeCare'
 import FAQ from './components/FAQ'
@@ -48,7 +47,6 @@ function App() {
           <Pricing />
           <AboutUs />
           <Testimonials />
-          <RegisterForm />
           <Team />
           <EndOfLifeCare />
           <FAQ />
