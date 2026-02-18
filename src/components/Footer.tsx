@@ -25,20 +25,13 @@ export default function Footer() {
             <p className="text-white/80 text-lg mb-8">
               Have questions? Want to know if we cover your area? We'd love to hear from you.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
                 href="mailto:hello@heartathomevets.com"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-semibold text-lg rounded-xl hover:bg-white/90 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 Email Us
-              </a>
-              <a
-                href="#register"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-semibold text-lg rounded-xl hover:bg-accent/90 transition-colors"
-              >
-                <Heart className="w-5 h-5" />
-                Register Interest
               </a>
             </div>
           </div>
