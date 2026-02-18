@@ -81,9 +81,11 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex gap-4 mt-6">
               <a
-                href="#"
+                href="https://www.facebook.com/people/Heart-at-home-vets/61582877040325/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Facebook (coming soon)"
+                aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>

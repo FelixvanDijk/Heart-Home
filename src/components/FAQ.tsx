@@ -109,7 +109,7 @@ export default function FAQ() {
             Still have questions? We'd love to hear from you!
           </p>
           <a 
-            href="#register" 
+            href="mailto:hello@heartathomevets.com" 
             className="btn-primary inline-flex"
           >
             Get in Touch
