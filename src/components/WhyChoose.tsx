@@ -2,6 +2,9 @@ import { motion } from 'framer-motion'
 import { Check, Heart, Clock, Home, Users, Shield } from 'lucide-react'
 import { TextReveal } from './ui/TextReveal'
 
+// LupaPets booking/registration link
+const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
+
 const benefits = [
   { icon: Heart, text: 'Less anxiety and fear', description: 'Pets stay calm in their familiar environment' },
   { icon: Home, text: 'No stressful travel or busy waiting rooms', description: 'Skip the car ride and clinic stress' },
@@ -98,7 +101,9 @@ export default function WhyChoose() {
                   Let us care for your pet where they feel safest
                 </p>
                 <a 
-                  href="#register"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-semibold rounded-xl hover:bg-white/90 transition-colors"
                 >
                   Book your home visit

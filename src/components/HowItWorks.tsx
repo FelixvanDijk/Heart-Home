@@ -2,6 +2,9 @@ import { motion } from 'framer-motion'
 import { Calendar, Clock, Stethoscope, FileText } from 'lucide-react'
 import { TextReveal } from './ui/TextReveal'
 
+// LupaPets booking/registration link
+const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
+
 const steps = [
   {
     number: '01',
@@ -121,7 +124,9 @@ export default function HowItWorks() {
           className="text-center mt-16"
         >
           <a 
-            href="#register"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group"
           >
             Book Your Home Visit
