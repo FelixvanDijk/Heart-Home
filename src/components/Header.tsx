@@ -55,11 +55,11 @@ export default function Header() {
       }`}
     >
       <div className="container-custom">
-        <nav className="flex items-center justify-between gap-4">
+        <nav className="flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
-            className="flex items-center gap-3 group shrink-0"
+            className="flex items-center gap-3 group"
             onClick={handleNavClick}
           >
             <img
@@ -71,12 +71,12 @@ export default function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden xl:flex items-center justify-center flex-1 gap-4 2xl:gap-6 min-w-0">
+          <ul className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`text-text text-[0.95rem] 2xl:text-[1.05rem] font-medium hover:text-primary transition-colors py-2 relative group whitespace-nowrap ${
+                  className={`text-text font-medium hover:text-primary transition-colors py-2 relative group ${
                     activeSection === link.id ? 'text-primary' : ''
                   }`}
                 >
@@ -92,7 +92,7 @@ export default function Header() {
           </ul>
 
           {/* CTA Buttons (Desktop) - Links to LupaPets */}
-          <div className="hidden xl:flex items-center gap-2 shrink-0">
+          <div className="hidden lg:flex items-center gap-2">
             <a
               href={BOOKING_URL}
               target="_blank"
@@ -114,7 +114,7 @@ export default function Header() {
           </div>
 
           {/* Mobile: Book Now + Register Button + Menu Button */}
-          <div className="flex items-center gap-1.5 xl:hidden">
+          <div className="flex items-center gap-1.5 lg:hidden">
             {/* Mobile Book Now Button - Always visible */}
             <a
               href={BOOKING_URL}
@@ -156,7 +156,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`xl:hidden overflow-hidden transition-all duration-300 ease-out ${
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
             isMobileMenuOpen ? 'max-h-[32rem] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
         >
