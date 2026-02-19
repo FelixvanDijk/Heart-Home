@@ -457,8 +457,7 @@ export default function Services() {
           </TextReveal>
           
           <p className="text-xl text-text-muted max-w-2xl mx-auto">
-            Professional veterinary care delivered to your doorstep. 
-            Here's what we'll offer when we launch.
+            Professional veterinary care delivered to your doorstep.
           </p>
         </div>
 

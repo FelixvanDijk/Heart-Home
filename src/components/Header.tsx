@@ -8,6 +8,7 @@ const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-
 const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
   { href: '#services', label: 'Services', id: 'services' },
+  { href: '#pricing', label: 'Pricing', id: 'pricing' },
   { href: '#about', label: 'About Us', id: 'about' },
   { href: '#testimonials', label: 'Testimonials', id: 'testimonials' },
   { href: '#team', label: 'Meet the Team', id: 'team' },
