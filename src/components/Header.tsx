@@ -55,28 +55,28 @@ export default function Header() {
       }`}
     >
       <div className="container-custom">
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between gap-4">
           {/* Logo */}
           <a
             href="#home"
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 group shrink-0"
             onClick={handleNavClick}
           >
             <img
               src={logoImg}
               alt="Heart @ Home"
-              className="h-12 md:h-14 w-auto transition-transform group-hover:scale-105"
+              className="h-10 lg:h-11 w-auto transition-transform group-hover:scale-105"
             />
             <span className="sr-only">Heart @ Home</span>
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <ul className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-6 px-4 min-w-0">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`text-text text-[0.95rem] xl:text-base font-medium hover:text-primary transition-colors py-2 relative group whitespace-nowrap ${
+                  className={`text-text text-sm xl:text-[0.95rem] font-medium hover:text-primary transition-colors py-2 relative group whitespace-nowrap ${
                     activeSection === link.id ? 'text-primary' : ''
                   }`}
                 >
@@ -92,7 +92,7 @@ export default function Header() {
           </ul>
 
           {/* CTA Buttons (Desktop) - Links to LupaPets */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2 ml-4 shrink-0">
             <a
               href={BOOKING_URL}
               target="_blank"
