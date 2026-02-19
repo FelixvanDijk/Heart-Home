@@ -71,12 +71,12 @@ export default function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`text-text font-medium hover:text-primary transition-colors py-2 relative group ${
+                  className={`text-text text-[0.95rem] xl:text-base font-medium hover:text-primary transition-colors py-2 relative group whitespace-nowrap ${
                     activeSection === link.id ? 'text-primary' : ''
                   }`}
                 >
@@ -97,7 +97,7 @@ export default function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary hover:bg-primary/90 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 lg:px-3.5 xl:px-4 py-2 bg-primary hover:bg-primary/90 text-white text-xs xl:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200 whitespace-nowrap"
             >
               <Calendar className="w-3.5 h-3.5" />
               Book Now
@@ -106,7 +106,7 @@ export default function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent hover:bg-accent/90 text-white text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-3 lg:px-3.5 xl:px-4 py-2 bg-accent hover:bg-accent/90 text-white text-xs xl:text-sm font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200 whitespace-nowrap"
             >
               <PawPrint className="w-3.5 h-3.5" />
               Register
