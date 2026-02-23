@@ -128,48 +128,46 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile: Book Now + Register Button + Menu Button */}
-          <div className="flex items-center gap-1 lg:hidden">
-            {/* Mobile Emergency Button - Always visible */}
-            <a
-              href={EMERGENCY_TEL_LINK}
-              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-red-600 hover:bg-red-700 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all ring-1 ring-red-500/40 whitespace-nowrap"
-              aria-label="Emergency Care Call 01978 253 101"
-            >
-              <Siren className="hidden sm:inline w-2.5 h-2.5" />
-              <span>Emergency</span>
-            </a>
+          {/* Mobile: Action Pills + Menu Button */}
+          <div className="flex items-center gap-2 lg:hidden flex-1 justify-end min-w-0">
+            <div className="grid grid-cols-[1.35fr_0.95fr_0.9fr_1.15fr] gap-1 flex-1 min-w-0 max-w-[18rem]">
+              {/* Mobile Emergency Button - Always visible */}
+              <a
+                href={EMERGENCY_TEL_LINK}
+                className="inline-flex items-center justify-center px-2 py-1.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all ring-1 ring-red-500/40 whitespace-nowrap"
+                aria-label="Emergency Care Call 01978 253 101"
+              >
+                <span>Emergency</span>
+              </a>
 
-            {/* Mobile Shop Button - Always visible */}
-            <a
-              href={SHOP_SECTION_LINK}
-              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-white/95 hover:bg-white text-primary border border-primary/30 font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
-            >
-              <ShoppingBag className="hidden sm:inline w-2.5 h-2.5" />
-              <span>Shop</span>
-            </a>
+              {/* Mobile Shop Button - Always visible */}
+              <a
+                href={SHOP_SECTION_LINK}
+                className="inline-flex items-center justify-center px-2 py-1.5 bg-white/95 hover:bg-white text-primary border border-primary/30 font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
+              >
+                <span>Shop</span>
+              </a>
 
-            {/* Mobile Book Now Button - Always visible */}
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-primary hover:bg-primary/90 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
-            >
-              <Calendar className="hidden sm:inline w-2.5 h-2.5" />
-              <span>Book</span>
-            </a>
+              {/* Mobile Book Now Button - Always visible */}
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-2 py-1.5 bg-primary hover:bg-primary/90 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
+              >
+                <span>Book</span>
+              </a>
 
-            {/* Mobile Register Button - Always visible */}
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-accent hover:bg-accent/90 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
-            >
-              <PawPrint className="hidden sm:inline w-2.5 h-2.5" />
-              <span>Register</span>
-            </a>
+              {/* Mobile Register Button - Always visible */}
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-2 py-1.5 bg-accent hover:bg-accent/90 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
+              >
+                <span>Register</span>
+              </a>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
