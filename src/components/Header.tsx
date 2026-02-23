@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, PawPrint, Calendar } from 'lucide-react'
+import { Menu, X, PawPrint, Calendar, ShoppingBag } from 'lucide-react'
 import logoImg from '/assets/logo.png'
 
 // LupaPets booking/registration link
 const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
+const SHOP_SECTION_LINK = '#shop'
 
 const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
@@ -94,6 +95,13 @@ export default function Header() {
           {/* CTA Buttons (Desktop) - Links to LupaPets */}
           <div className="hidden lg:flex items-center gap-2 ml-4 shrink-0">
             <a
+              href={SHOP_SECTION_LINK}
+              className="hidden xl:inline-flex items-center gap-1.5 px-3 py-2 border border-primary/30 text-primary hover:bg-primary/5 text-xs font-semibold rounded-full transition-colors whitespace-nowrap"
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+              Shop
+            </a>
+            <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -172,6 +180,16 @@ export default function Header() {
                 </a>
               </li>
             ))}
+            <li className="pt-1">
+              <a
+                href={SHOP_SECTION_LINK}
+                className="w-full py-3 rounded-xl border border-primary/30 text-primary text-base font-semibold flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors"
+                onClick={handleNavClick}
+              >
+                <ShoppingBag className="w-4 h-4" />
+                Shop Essentials
+              </a>
+            </li>
             <li className="pt-3 flex gap-3">
               <a
                 href={BOOKING_URL}

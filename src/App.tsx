@@ -8,6 +8,7 @@ import Services from './components/Services'
 import HowItWorks from './components/HowItWorks'
 import ServiceArea from './components/ServiceArea'
 import Pricing from './components/Pricing'
+import PartnerShop from './components/PartnerShop'
 import AboutUs from './components/AboutUs'
 import Testimonials from './components/Testimonials'
 import Team from './components/Team'
@@ -45,6 +46,7 @@ function App() {
           <HowItWorks />
           <ServiceArea />
           <Pricing />
+          <PartnerShop />
           <AboutUs />
           <Testimonials />
           <Team />

@@ -129,6 +129,14 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="#shop"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  Shop Essentials
+                </a>
+              </li>
+              <li>
+                <a
                   href="#register"
                   className="text-white/80 hover:text-white transition-colors"
                 >
@@ -190,6 +198,15 @@ export default function Footer() {
             <p className="text-center text-white/90">
               <strong>Emergency?</strong> If your pet is unwell urgently, please contact your 
               nearest emergency or out-of-hours veterinary provider immediately.
+            </p>
+            <p className="text-center text-white mt-3">
+              <strong>Out-of-hours provider:</strong> VetsNow{' '}
+              <a
+                href="tel:01978253101"
+                className="underline underline-offset-2 hover:text-white/80 transition-colors"
+              >
+                01978 253 101
+              </a>
             </p>
           </div>
 
