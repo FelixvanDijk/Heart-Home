@@ -137,6 +137,14 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="#app"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  Download App
+                </a>
+              </li>
+              <li>
+                <a
                   href="#register"
                   className="text-white/80 hover:text-white transition-colors"
                 >

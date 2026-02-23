@@ -9,6 +9,7 @@ import HowItWorks from './components/HowItWorks'
 import ServiceArea from './components/ServiceArea'
 import Pricing from './components/Pricing'
 import PartnerShop from './components/PartnerShop'
+import AppDownload from './components/AppDownload'
 import AboutUs from './components/AboutUs'
 import Testimonials from './components/Testimonials'
 import Team from './components/Team'
@@ -47,6 +48,7 @@ function App() {
           <ServiceArea />
           <Pricing />
           <PartnerShop />
+          <AppDownload />
           <AboutUs />
           <Testimonials />
           <Team />
