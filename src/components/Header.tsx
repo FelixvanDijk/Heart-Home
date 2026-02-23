@@ -122,6 +122,15 @@ export default function Header() {
 
           {/* Mobile: Book Now + Register Button + Menu Button */}
           <div className="flex items-center gap-1.5 lg:hidden">
+            {/* Mobile Shop Button - Always visible */}
+            <a
+              href={SHOP_SECTION_LINK}
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 bg-white/95 hover:bg-white text-primary border border-primary/30 font-semibold text-xs rounded-full shadow-md transition-all"
+            >
+              <ShoppingBag className="w-3 h-3" />
+              <span>Shop</span>
+            </a>
+
             {/* Mobile Book Now Button - Always visible */}
             <a
               href={BOOKING_URL}
