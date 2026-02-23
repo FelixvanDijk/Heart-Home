@@ -129,25 +129,24 @@ export default function Header() {
           </div>
 
           {/* Mobile: Book Now + Register Button + Menu Button */}
-          <div className="flex items-center gap-1.5 lg:hidden">
+          <div className="flex items-center gap-1 lg:hidden">
             {/* Mobile Emergency Button - Always visible */}
             <a
               href={EMERGENCY_TEL_LINK}
-              className="inline-flex items-center gap-1 px-2 py-1 bg-red-600 hover:bg-red-700 text-white font-semibold text-[11px] rounded-full shadow-md transition-all ring-1 ring-red-500/40"
+              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-red-600 hover:bg-red-700 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all ring-1 ring-red-500/40 whitespace-nowrap"
               aria-label="Emergency Care Call 01978 253 101"
             >
-              <Siren className="w-2.5 h-2.5" />
-              <span className="hidden sm:inline">Emergency</span>
-              <span className="sm:hidden">SOS</span>
+              <Siren className="hidden sm:inline w-2.5 h-2.5" />
+              <span>Emergency</span>
             </a>
 
             {/* Mobile Shop Button - Always visible */}
             <a
               href={SHOP_SECTION_LINK}
-              className="inline-flex items-center gap-1 px-2 py-1 bg-white/95 hover:bg-white text-primary border border-primary/30 font-semibold text-[11px] rounded-full shadow-md transition-all"
+              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-white/95 hover:bg-white text-primary border border-primary/30 font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
             >
-              <ShoppingBag className="w-2.5 h-2.5" />
-              <span className="hidden sm:inline">Shop</span>
+              <ShoppingBag className="hidden sm:inline w-2.5 h-2.5" />
+              <span>Shop</span>
             </a>
 
             {/* Mobile Book Now Button - Always visible */}
@@ -155,11 +154,10 @@ export default function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2 py-1 bg-primary hover:bg-primary/90 text-white font-semibold text-[11px] rounded-full shadow-md transition-all"
+              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-primary hover:bg-primary/90 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
             >
-              <Calendar className="w-2.5 h-2.5" />
-              <span className="hidden sm:inline">Book</span>
-              <span className="sm:hidden">Bk</span>
+              <Calendar className="hidden sm:inline w-2.5 h-2.5" />
+              <span>Book</span>
             </a>
 
             {/* Mobile Register Button - Always visible */}
@@ -167,17 +165,16 @@ export default function Header() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2 py-1 bg-accent hover:bg-accent/90 text-white font-semibold text-[11px] rounded-full shadow-md transition-all"
+              className="inline-flex items-center gap-0.5 px-1.5 py-1 bg-accent hover:bg-accent/90 text-white font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
             >
-              <PawPrint className="w-2.5 h-2.5" />
-              <span className="hidden sm:inline">Register</span>
-              <span className="sm:hidden">Reg</span>
+              <PawPrint className="hidden sm:inline w-2.5 h-2.5" />
+              <span>Register</span>
             </a>
 
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="p-2 text-text hover:text-primary transition-colors shrink-0"
+              className="p-1.5 text-text hover:text-primary transition-colors shrink-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
