@@ -92,7 +92,7 @@ export default function Footer() {
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Instagram (coming soon)"
+                aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>

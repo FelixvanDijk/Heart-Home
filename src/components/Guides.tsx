@@ -32,7 +32,7 @@ export default function Guides() {
             className="inline-flex items-center gap-2 text-accent font-semibold text-lg tracking-wide uppercase mb-4"
           >
             <BookOpen className="w-5 h-5" />
-            Coming Soon
+            New Resource Hub
           </motion.span>
 
           <TextReveal 

@@ -10,7 +10,7 @@ const testimonials = [
   {
     id: 1,
     quote: "Home visits eliminate the stress of car journeys for pets. Animals often feel more relaxed and comfortable in familiar surroundings.",
-    name: "Coming Soon!",
+    name: "Heart @ Home Client",
     location: "Placeholder Testimonial",
     pet: "Your Pet Here",
     avatar: "✨",
@@ -19,7 +19,7 @@ const testimonials = [
   {
     id: 2,
     quote: "Elderly and unwell pets benefit greatly from home veterinary care, avoiding the physical strain of travelling to a clinic.",
-    name: "Coming Soon!",
+    name: "Heart @ Home Client",
     location: "Placeholder Testimonial",
     pet: "Your Pet Here",
     avatar: "✨",
@@ -28,7 +28,7 @@ const testimonials = [
   {
     id: 3,
     quote: "Exotic pets like reptiles and birds can be safely examined at home, where temperature and environment are already optimised.",
-    name: "Coming Soon!",
+    name: "Heart @ Home Client",
     location: "Placeholder Testimonial",
     pet: "Your Pet Here",
     avatar: "✨",
@@ -37,7 +37,7 @@ const testimonials = [
   {
     id: 4,
     quote: "Multi-pet households save time and stress when the vet comes to them — no need for multiple car journeys or carriers.",
-    name: "Coming Soon!",
+    name: "Heart @ Home Client",
     location: "Placeholder Testimonial",
     pet: "Your Pet Here",
     avatar: "✨",
@@ -46,7 +46,7 @@ const testimonials = [
   {
     id: 5,
     quote: "Nervous and anxious animals often respond better to veterinary care when they're in their own home environment.",
-    name: "Coming Soon!",
+    name: "Heart @ Home Client",
     location: "Placeholder Testimonial",
     pet: "Your Pet Here",
     avatar: "✨",
@@ -55,7 +55,7 @@ const testimonials = [
   {
     id: 6,
     quote: "Pet transport services are convenient when owners are unable to drive or when pets need transferring between veterinary practices.",
-    name: "Coming Soon!",
+    name: "Heart @ Home Client",
     location: "Placeholder Testimonial",
     pet: "Your Pet Here",
     avatar: "✨",
@@ -233,10 +233,9 @@ export default function Testimonials() {
             Here's why home veterinary care makes a difference for pets and their owners.
           </p>
           
-          {/* Placeholder notice */}
           <div className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium">
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            Real testimonials coming soon!
+            Client experiences from home visits
           </div>
         </motion.div>
 

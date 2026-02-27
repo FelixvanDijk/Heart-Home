@@ -1,6 +1,6 @@
 # Heart @ Home - Mobile Vet Website
 
-A modern, accessible "Coming Soon" landing page for Heart @ Home, a mobile veterinary service offering home visits for small animals and exotic pets in the Wrexham, Chester, and surrounding areas.
+A modern, accessible landing page for Heart @ Home, a mobile veterinary service offering home visits for small animals and exotic pets in the Wrexham, Chester, and surrounding areas.
 
 ![Heart @ Home Logo](./assets/logo.png)
 
