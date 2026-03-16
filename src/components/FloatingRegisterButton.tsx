@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { PawPrint, X, Calendar, ShoppingBag } from 'lucide-react'
+import { SHOP_URL } from '../lib/links'
 
 // LupaPets booking/registration link
 const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
-const SHOP_SECTION_LINK = '#shop'
 
 export default function FloatingRegisterButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -48,7 +48,9 @@ export default function FloatingRegisterButton() {
 
           {/* Shop floating button */}
           <a
-            href={SHOP_SECTION_LINK}
+            href={SHOP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2.5 bg-white/95 hover:bg-white text-primary border border-primary/25 font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
           >
             <ShoppingBag className="w-4 h-4" />

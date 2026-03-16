@@ -3,6 +3,7 @@ import { Heart, Mail, Phone, Facebook, Instagram, MessageCircle, FileText, Shiel
 import logoImg from '/assets/logo.png'
 import TermsModal from './TermsModal'
 import PrivacyModal from './PrivacyModal'
+import { SHOP_URL } from '../lib/links'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -129,7 +130,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#shop"
+                  href={SHOP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white/80 hover:text-white transition-colors"
                 >
                   Shop Essentials

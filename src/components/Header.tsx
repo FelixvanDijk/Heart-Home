@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, PawPrint, Calendar, ShoppingBag, Siren } from 'lucide-react'
 import logoImg from '/assets/logo.png'
+import { SHOP_URL } from '../lib/links'
 
 // LupaPets booking/registration link
 const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
-const SHOP_SECTION_LINK = '#shop'
 const EMERGENCY_TEL_LINK = 'tel:01978253101'
 
 const navLinks = [
@@ -102,7 +102,9 @@ export default function Header() {
               Emergency Care
             </a>
             <a
-              href={SHOP_SECTION_LINK}
+              href={SHOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden xl:inline-flex items-center gap-1.5 px-3 py-2 border border-primary/30 text-primary hover:bg-primary/5 text-xs font-semibold rounded-full transition-colors whitespace-nowrap"
             >
               <ShoppingBag className="w-3.5 h-3.5" />
@@ -142,7 +144,9 @@ export default function Header() {
 
               {/* Mobile Shop Button - Always visible */}
               <a
-                href={SHOP_SECTION_LINK}
+                href={SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-2 py-1.5 bg-white/95 hover:bg-white text-primary border border-primary/30 font-semibold text-[10px] leading-none rounded-full shadow-md transition-all whitespace-nowrap"
               >
                 <span>Shop</span>
@@ -217,7 +221,9 @@ export default function Header() {
             </li>
             <li className="pt-1">
               <a
-                href={SHOP_SECTION_LINK}
+                href={SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full py-3 rounded-xl border border-primary/30 text-primary text-base font-semibold flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors"
                 onClick={handleNavClick}
               >

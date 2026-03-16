@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Heart, Shield, ShoppingBag, Stethoscope, Truck } from 'lucide-react'
-
-// Replace with the final affiliate shop URL when provided by the client.
-const SHOP_URL = '#'
+import shopQrImg from '/assets/QR.png'
+import { SHOP_URL } from '../lib/links'
 
 const shopBenefits = [
   {
@@ -71,6 +70,28 @@ export default function PartnerShop() {
               </a>
             </div>
 
+            <div className="mb-6 flex flex-col sm:flex-row items-center gap-4 rounded-2xl border border-primary/10 bg-primary/5 p-4">
+              <a
+                href={SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 rounded-2xl bg-white p-3 shadow-md transition-transform hover:scale-[1.02]"
+                aria-label="Open Heart at Home pet shop"
+              >
+                <img
+                  src={shopQrImg}
+                  alt="QR code linking to the Heart at Home pet shop"
+                  className="h-28 w-28 rounded-lg"
+                />
+              </a>
+              <div className="text-center sm:text-left">
+                <p className="text-base font-semibold text-text">Prefer to browse on your phone?</p>
+                <p className="mt-1 text-sm text-text-muted">
+                  Scan the QR code to open the Heart at Home shop directly.
+                </p>
+              </div>
+            </div>
+
             <p className="text-sm text-text-muted">
               We may receive a small commission from qualifying purchases at no extra cost to you.
             </p>
@@ -121,4 +142,3 @@ export default function PartnerShop() {
     </section>
   )
 }
-
