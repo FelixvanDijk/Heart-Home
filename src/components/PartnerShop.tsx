@@ -48,8 +48,9 @@ export default function PartnerShop() {
             </h2>
 
             <p className="text-lg text-text-muted mb-8 leading-relaxed">
-              We are partnering with an online store for products your pet needs every day.
-              Every purchase through our shop link helps support the care we provide locally.
+              We've partnered with a trusted online pet store to help you easily find your pet's everyday essentials.
+              When you shop through our link, you're also supporting our mobile vet service and helping us continue caring for pets in our local community.
+              Thank you for supporting us!
             </p>
 
             <div className="flex flex-wrap gap-3 mb-5">
@@ -91,10 +92,6 @@ export default function PartnerShop() {
                 </p>
               </div>
             </div>
-
-            <p className="text-sm text-text-muted">
-              We may receive a small commission from qualifying purchases at no extra cost to you.
-            </p>
           </motion.div>
 
           <motion.div
