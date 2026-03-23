@@ -22,61 +22,62 @@ export function TextReveal({
   scrub = false
 }: TextRevealProps) {
   const containerRef = useRef<HTMLElement>(null)
-  const hasAnimated = useRef(false)
 
   useEffect(() => {
-    if (!containerRef.current || hasAnimated.current) return
+    if (!containerRef.current) return
     
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReducedMotion) return
 
-    hasAnimated.current = true
-    const chars = containerRef.current.querySelectorAll('.char')
+    const ctx = gsap.context(() => {
+      const chars = containerRef.current?.querySelectorAll('.char')
+      if (!chars?.length) return
 
-    if (scrub) {
-      gsap.fromTo(chars,
-        { 
-          opacity: 0.2,
-          y: 20,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: stagger,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            end: 'top 20%',
-            scrub: 1,
+      if (scrub) {
+        gsap.fromTo(chars,
+          { 
+            opacity: 0.2,
+            y: 20,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: stagger,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 80%',
+              end: 'top 20%',
+              scrub: 1,
+            }
           }
-        }
-      )
-    } else {
-      gsap.fromTo(chars,
-        { 
-          opacity: 0,
-          y: 50,
-          rotateX: -90,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.8,
-          ease: 'back.out(1.7)',
-          stagger: stagger,
-          delay: delay,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
+        )
+      } else {
+        gsap.fromTo(chars,
+          { 
+            opacity: 0,
+            y: 50,
+            rotateX: -90,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            duration: 0.8,
+            ease: 'back.out(1.7)',
+            stagger: stagger,
+            delay: delay,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
           }
-        }
-      )
-    }
+        )
+      }
+    }, containerRef)
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+      ctx.revert()
     }
   }, [delay, stagger, scrub])
 

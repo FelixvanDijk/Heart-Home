@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Download, Smartphone, Star } from 'lucide-react'
+import { ArrowRight, Download, MessageCircle, Smartphone } from 'lucide-react'
 
 const APP_STORE_URL = 'https://apps.apple.com/gb/app/lupa-ai-powered-petcare/id6449440240'
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=app.petsai&hl=en_GB'
@@ -16,9 +16,9 @@ const steps = [
     description: 'Use the same login you already created on the website.',
   },
   {
-    icon: Star,
-    title: 'Find and favourite Heart At Home Vets',
-    description: 'Search for Heart At Home Vets and add us to favourites for faster booking.',
+    icon: MessageCircle,
+    title: 'Book and message us faster',
+    description: 'Find Heart At Home Vets, add us to favourites, request appointments, and message our vets directly.',
   },
 ]
 
@@ -41,14 +41,14 @@ export default function AppDownload() {
           <div className="max-w-4xl mx-auto text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-5">
               <Smartphone className="w-4 h-4" />
-              Mobile App Booking
+              Mobile booking & messaging
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-text mb-5">
-              Book on the move with the Lupa app
+              The best way to book and message us on the move
             </h2>
             <p className="text-lg text-text-muted leading-relaxed">
               Download <strong>Lupa - AI Powered Petcare</strong> on your phone or tablet to request appointments,
-              manage pets, and access booking faster wherever you are.
+              message our vets directly, manage pets, and keep everything in one place wherever you are.
             </p>
           </div>
 
@@ -100,7 +100,7 @@ export default function AppDownload() {
               Use your existing Heart @ Home website login details inside the app.
             </p>
             <p className="text-text-muted text-sm mt-1">
-              Add your pets and request appointments in just a few taps.
+              Add your pets, request appointments, and send direct messages to the vets in just a few taps.
             </p>
           </div>
         </motion.div>

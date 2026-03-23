@@ -113,7 +113,6 @@ export default function EndOfLifeCare() {
             </p>
             
             <p className="text-text-muted leading-relaxed text-sm">
-              We do not believe in placing our companions in a cold store or freezer. 
               Either Holywell can collect the same or next day, or we can transport your pet 
               there the same or following day.
             </p>
@@ -123,4 +122,3 @@ export default function EndOfLifeCare() {
     </section>
   )
 }
-

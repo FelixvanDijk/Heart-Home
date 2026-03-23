@@ -21,6 +21,7 @@ import ScrollProgress from './components/ScrollProgress'
 import IntroAnimation from './components/IntroAnimation'
 import SmoothScroll from './components/SmoothScroll'
 import FloatingRegisterButton from './components/FloatingRegisterButton'
+import AppSpotlightPrompt from './components/AppSpotlightPrompt'
 
 function App() {
   const [introComplete, setIntroComplete] = useState(false)
@@ -37,6 +38,7 @@ function App() {
         
         <ScrollProgress />
         <Header />
+        <AppSpotlightPrompt enabled={introComplete} />
         <FloatingRegisterButton />
         <main>
           <Hero />
