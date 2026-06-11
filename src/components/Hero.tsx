@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Sparkles, Heart, MapPin, Clock, Shield, PawPrint, Calendar } from 'lucide-react'
+import { Sparkles, Heart, MapPin, Clock, Shield, PawPrint, Calendar, MessageCircle } from 'lucide-react'
 import { CyclingTextScramble } from './ui/TextScramble'
 import { MagneticButton } from './ui/MagneticButton'
 import { AnimatedGradient } from './ui/AnimatedGradient'
 import logoImg from '/assets/logo.png'
+import vidiVetLogo from '/assets/Vidivet logo_master.png'
 
 // LupaPets booking/registration link
 const BOOKING_URL = 'https://store.lupapets.com/booking/37e5721f-f7e1-405f-ab07-8abf7337e66e'
@@ -44,8 +45,7 @@ export default function Hero() {
 
     // Parallax for the whole hero section
     gsap.to('.hero-content', {
-      y: 100,
-      opacity: 0,
+      y: 60,
       ease: 'none',
       scrollTrigger: {
         trigger: heroRef.current,
@@ -255,6 +255,30 @@ export default function Hero() {
                 </MagneticButton>
               </motion.div>
 
+              <motion.a
+                href="#vidivet"
+                className="mb-8 flex max-w-xl items-center gap-4 rounded-2xl border border-accent/20 bg-white/90 p-4 text-left shadow-lg shadow-accent/5 transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+              >
+                <img
+                  src={vidiVetLogo}
+                  alt="VidiVet"
+                  className="hidden h-10 w-auto sm:block"
+                  loading="lazy"
+                />
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-accent/10 sm:hidden">
+                  <MessageCircle className="h-5 w-5 text-accent" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-accent">Need vet advice in a hurry?</p>
+                  <p className="text-sm text-text-muted">
+                    Registered clients get 24/7 digital support with VidiVet.
+                  </p>
+                </div>
+              </motion.a>
+
               {/* Benefit badges */}
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 {benefits.map((benefit) => (
@@ -278,7 +302,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 1, delay: 0.2, type: 'spring' }}
-              className="relative flex items-center justify-center order-1 lg:order-2 hero-logo"
+              className="relative flex items-center justify-center order-1 lg:order-2 lg:-mt-40 xl:-mt-56 hero-logo"
             >
               {/* Decorative rings with rotation */}
               <div className="absolute inset-0 flex items-center justify-center">

@@ -11,8 +11,9 @@ const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
   { href: '#services', label: 'Services', id: 'services' },
   { href: '#pricing', label: 'Pricing', id: 'pricing' },
-  { href: '#team', label: 'Meet the Team', id: 'team' },
-  { href: '#end-of-life', label: 'End-of-Life Care', id: 'end-of-life' },
+  { href: '#vidivet', label: 'VidiVet', id: 'vidivet' },
+  { href: '#team', label: 'Team', id: 'team' },
+  { href: '#end-of-life', label: 'End-of-Life', id: 'end-of-life' },
   { href: '#faq', label: 'FAQs', id: 'faq' },
 ]
 
@@ -54,7 +55,7 @@ export default function Header() {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="container-custom">
+      <div className="mx-auto max-w-[108rem] px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between gap-4">
           {/* Logo */}
           <a
@@ -71,12 +72,12 @@ export default function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-6 px-4 min-w-0">
+          <ul className="hidden lg:flex flex-1 items-center justify-center gap-3 xl:gap-5 px-3 min-w-0">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`text-text text-sm xl:text-[0.95rem] font-medium hover:text-primary transition-colors py-2 relative group whitespace-nowrap ${
+                  className={`text-text text-sm font-medium hover:text-primary transition-colors py-2 relative group whitespace-nowrap ${
                     activeSection === link.id ? 'text-primary' : ''
                   }`}
                 >
@@ -92,7 +93,7 @@ export default function Header() {
           </ul>
 
           {/* CTA Buttons (Desktop) - Links to LupaPets */}
-          <div className="hidden lg:flex items-center gap-2 ml-4 shrink-0">
+          <div className="hidden lg:flex items-center gap-2 ml-2 shrink-0">
             <a
               href={EMERGENCY_TEL_LINK}
               className="inline-flex items-center gap-1.5 px-3 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-200 whitespace-nowrap ring-1 ring-red-500/40"

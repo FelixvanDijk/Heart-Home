@@ -22,6 +22,8 @@ import IntroAnimation from './components/IntroAnimation'
 import SmoothScroll from './components/SmoothScroll'
 import FloatingRegisterButton from './components/FloatingRegisterButton'
 import AppSpotlightPrompt from './components/AppSpotlightPrompt'
+import VidiVetSection from './components/VidiVetSection'
+import VidiVetWidget from './components/VidiVetWidget'
 
 function App() {
   const [introComplete, setIntroComplete] = useState(false)
@@ -40,6 +42,7 @@ function App() {
         <Header />
         <AppSpotlightPrompt enabled={introComplete} />
         <FloatingRegisterButton />
+        <VidiVetWidget />
         <main>
           <Hero />
           <Introduction />
@@ -51,6 +54,7 @@ function App() {
           <Pricing />
           <PartnerShop />
           <AppDownload />
+          <VidiVetSection />
           <AboutUs />
           <Testimonials />
           <Team />

@@ -4,6 +4,7 @@ import logoImg from '/assets/logo.png'
 import TermsModal from './TermsModal'
 import PrivacyModal from './PrivacyModal'
 import { SHOP_URL } from '../lib/links'
+import vidiVetLogo from '/assets/Vidivet logo_master.png'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -26,7 +27,7 @@ export default function Footer() {
             <p className="text-white/80 text-lg mb-8">
               Have questions? Want to know if we cover your area? We'd love to hear from you.
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
               <a
                 href="mailto:hello@heartathomevets.com"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-semibold text-lg rounded-xl hover:bg-white/90 transition-colors"
@@ -34,6 +35,30 @@ export default function Footer() {
                 <Mail className="w-5 h-5" />
                 Email Us
               </a>
+              <a
+                href="#vidivet"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-semibold text-lg rounded-xl hover:bg-accent-light transition-colors"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Get VidiVet
+              </a>
+            </div>
+
+            <div className="mt-8 rounded-2xl bg-white/10 border border-white/15 p-5 text-left">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <img
+                  src={vidiVetLogo}
+                  alt="VidiVet"
+                  className="w-44 max-w-full rounded-xl bg-white/10"
+                  loading="lazy"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-white">Unsure if your pet needs to see a vet?</h3>
+                  <p className="mt-1 text-white/80">
+                    Use VidiVet for 24/7 digital veterinary advice, free for registered Heart at Home clients.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -148,6 +173,14 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="#vidivet"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  VidiVet 24/7 Advice
+                </a>
+              </li>
+              <li>
+                <a
                   href="#register"
                   className="text-white/80 hover:text-white transition-colors"
                 >
@@ -207,8 +240,17 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/20">
           <div className="bg-accent/20 rounded-xl p-4 mb-8">
             <p className="text-center text-white/90">
-              <strong>Emergency?</strong> If your pet is unwell urgently, please contact your 
-              nearest emergency or out-of-hours veterinary provider immediately.
+              <strong>Emergency?</strong> If your pet is unwell urgently, please contact your
+              nearest emergency or out-of-hours veterinary provider immediately. If you are unsure
+              whether it is urgent, VidiVet can provide 24/7 triage advice.
+            </p>
+            <p className="text-center text-white mt-3">
+              <a
+                href="#vidivet"
+                className="font-semibold underline underline-offset-2 hover:text-white/80 transition-colors"
+              >
+                Get VidiVet advice
+              </a>
             </p>
             <p className="text-center text-white mt-3">
               <strong>Out-of-hours provider:</strong> VetsNow{' '}
