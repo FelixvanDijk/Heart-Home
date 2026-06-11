@@ -55,7 +55,8 @@ export default function Footer() {
                 <div>
                   <h3 className="text-xl font-bold text-white">Unsure if your pet needs to see a vet?</h3>
                   <p className="mt-1 text-white/80">
-                    Use VidiVet for 24/7 digital veterinary advice, free for registered Heart at Home clients.
+                    Use VidiVet for 24/7 digital veterinary advice. It is free for registered clients because
+                    Heart at Home Vets pays for it.
                   </p>
                 </div>
               </div>
@@ -242,7 +243,7 @@ export default function Footer() {
             <p className="text-center text-white/90">
               <strong>Emergency?</strong> If your pet is unwell urgently, please contact your
               nearest emergency or out-of-hours veterinary provider immediately. If you are unsure
-              whether it is urgent, VidiVet can provide 24/7 triage advice.
+              whether it is urgent, VidiVet can provide 24/7 triage advice free to Heart at Home clients.
             </p>
             <p className="text-center text-white mt-3">
               <a

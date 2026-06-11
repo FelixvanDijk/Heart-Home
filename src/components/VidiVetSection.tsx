@@ -8,7 +8,7 @@ const VIDIVET_SIGNUP_URL = 'https://vidivet.com/practices-createaccount/?partner
 
 const benefits = [
   'Answers from a UK-registered vet in minutes',
-  'Free access for Heart at Home registered clients',
+  'Free for Heart at Home registered clients - paid for by Heart at Home Vets',
   'Helpful when you are unsure if your pet needs to be seen in person',
   'Photo, video, and message-based advice from your phone or tablet',
 ]
@@ -66,7 +66,8 @@ export default function VidiVetSection() {
 
             <p className="text-lg text-text-muted leading-relaxed mb-8">
               Heart at Home has partnered with VidiVet to give registered clients access to digital vet support
-              24/7. Send a question, photo, or video and receive practical guidance on what to do next.
+              24/7. There is no bill for you to pay - Heart at Home Vets covers the cost for our clients.
+              Send a question, photo, or video and receive practical guidance on what to do next.
             </p>
 
             <div className="space-y-3 mb-8">
@@ -79,6 +80,12 @@ export default function VidiVetSection() {
             </div>
 
             <div className="grid sm:grid-cols-3 gap-3">
+              <div className="rounded-2xl bg-accent/10 p-4 sm:col-span-3">
+                <p className="text-sm font-semibold uppercase tracking-wide text-accent">No client charge</p>
+                <p className="mt-1 text-text font-semibold">
+                  VidiVet is free for you to use as a registered Heart at Home client because we pay for it.
+                </p>
+              </div>
               <div className="rounded-2xl bg-primary/10 p-4">
                 <Clock className="w-5 h-5 text-primary mb-2" />
                 <p className="text-sm font-semibold text-text">Available 24/7</p>

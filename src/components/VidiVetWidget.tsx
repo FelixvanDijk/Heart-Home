@@ -41,7 +41,7 @@ export default function VidiVetWidget() {
 
             <p className="mt-4 text-sm leading-relaxed text-text-muted">
               Not sure if your pet needs to be seen? Heart at Home registered clients can use VidiVet
-              for 24/7 digital veterinary advice.
+              for 24/7 digital veterinary advice at no cost to you. Heart at Home Vets pays for the service.
             </p>
 
             <div className="mt-5 grid gap-2">

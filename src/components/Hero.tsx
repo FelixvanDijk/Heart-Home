@@ -274,7 +274,7 @@ export default function Hero() {
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-accent">Need vet advice in a hurry?</p>
                   <p className="text-sm text-text-muted">
-                    Registered clients get 24/7 digital support with VidiVet.
+                    Registered clients get VidiVet free - paid for by Heart at Home.
                   </p>
                 </div>
               </motion.a>
