@@ -2,6 +2,7 @@ export interface FAQ {
   id: string
   question: string
   answer: string
+  answerLink?: { href: string; label: string }
 }
 
 export const faqs: FAQ[] = [
@@ -31,14 +32,10 @@ export const faqs: FAQ[] = [
     answer: 'We plan to cover Wrexham, Chester, Ellesmere Port, Whitchurch, Mold, Oswestry, and surrounding areas. If you\'re unsure whether we\'ll reach you, please contact us — we\'re happy to help.',
   },
   {
-    id: 'launch',
-    question: 'When are you launching?',
-    answer: 'We\'re working hard to launch soon! Register your interest and we\'ll let you know as soon as we\'re ready to start booking appointments. We can\'t wait to meet you and your pets.',
-  },
-  {
     id: 'cost',
     question: 'How much do home visits cost?',
-    answer: 'Our pricing will be transparent and competitive. Home visits do involve a call-out fee to cover travel, but many clients find the convenience and reduced stress well worth it. Full pricing will be available when we launch, and payment is due at the time of the visit.',
+    answer: 'Please see the pricing section above for our current home visit fees and services.',
+    answerLink: { href: '#pricing', label: 'View pricing' },
   },
   {
     id: 'booking',

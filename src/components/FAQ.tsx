@@ -6,6 +6,7 @@ import { useInView } from '../hooks/useInView'
 function FAQItem({
   question,
   answer,
+  answerLink,
   isOpen,
   onToggle,
   isVisible,
@@ -13,6 +14,7 @@ function FAQItem({
 }: {
   question: string
   answer: string
+  answerLink?: { href: string; label: string }
   isOpen: boolean
   onToggle: () => void
   isVisible: boolean
@@ -55,6 +57,14 @@ function FAQItem({
         <div className="px-6 md:px-8 pb-6 md:pb-8 pt-0">
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-4" />
           <p className="text-text-muted text-lg md:text-xl leading-relaxed">{answer}</p>
+          {answerLink && (
+            <a
+              href={answerLink.href}
+              className="inline-block mt-3 text-primary font-semibold underline underline-offset-4 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+            >
+              {answerLink.label}
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -95,6 +105,7 @@ export default function FAQ() {
               key={faq.id}
               question={faq.question}
               answer={faq.answer}
+              answerLink={faq.answerLink}
               isOpen={openIndex === index}
               onToggle={() => toggleFAQ(index)}
               isVisible={isVisible}
